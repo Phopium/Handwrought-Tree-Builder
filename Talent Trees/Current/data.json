@@ -1,0 +1,2954 @@
+{
+    "trees": [
+        {
+            "name": "Skullduggery",
+            "talents": [
+                {
+                    "id": "s0",
+                    "name": "THE LIGHTER YOU ARE",
+                    "description": "When you spend Skullduggery to move, you may stand up from prone or disengage for free.",
+                    "position": [
+                        0,
+                        0
+                    ],
+                    "connections": [
+                        "s5"
+                    ]
+                },
+                {
+                    "id": "s1",
+                    "name": "CHEAT FATE",
+                    "description": "1/Session\nIgnore an Omen you've flipped or a Joker flipped targeting you. Use the next card instead.\n-or-\nDiscard Skullduggery to treat the Omen as if it were a Joker or vise versa. ",
+                    "position": [
+                        0,
+                        1
+                    ],
+                    "connections": [
+                        "s6"
+                    ]
+                },
+                {
+                    "id": "s2",
+                    "name": "OPPORTUNIST",
+                    "description": "You can use any skill card to make opportunity attacks.",
+                    "position": [
+                        0,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s3",
+                    "name": "DISGUISE",
+                    "description": "You my disguise yourself as though you spent an edge. ",
+                    "position": [
+                        0,
+                        3
+                    ],
+                    "connections": [
+                        "s8"
+                    ]
+                },
+                {
+                    "id": "s4",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        0,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s5",
+                    "name": "THE HARDER THEY FALL",
+                    "description": "Whenever you Trip an enemy, flip damage.",
+                    "position": [
+                        1,
+                        0
+                    ],
+                    "connections": [
+                        "s10"
+                    ]
+                },
+                {
+                    "id": "s6",
+                    "name": "SNEAK ATTACK",
+                    "description": "Deal +1 damage against enemies that targeted someone other than you last round",
+                    "position": [
+                        1,
+                        1
+                    ],
+                    "connections": [
+                        "s11"
+                    ]
+                },
+                {
+                    "id": "s7",
+                    "name": "REACTIVE PARRY",
+                    "description": "If you are wielding 2 weapons, you may spend a skullduggery card to block an attack even if you haven't readied a block.",
+                    "position": [
+                        1,
+                        2
+                    ],
+                    "connections": [
+                        "s6",
+                        "s12"
+                    ]
+                },
+                {
+                    "id": "s8",
+                    "name": "QUICK CHANGE",
+                    "description": "You may spend a Skullduggery card to change into or out of a disguise in a single turn.",
+                    "position": [
+                        1,
+                        3
+                    ],
+                    "connections": [
+                        "s7"
+                    ]
+                },
+                {
+                    "id": "s9",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        1,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s10",
+                    "name": "PERSEVERANCE",
+                    "description": "Gain +1 Strain threshold.",
+                    "position": [
+                        2,
+                        0
+                    ],
+                    "connections": [
+                        "s11"
+                    ]
+                },
+                {
+                    "id": "s11",
+                    "name": "FIND YOUR MOMENT",
+                    "description": "When you engage by attacking with Skullduggery, flip an extra card of damage.",
+                    "position": [
+                        2,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s12",
+                    "name": "RIPOSTE",
+                    "description": "After you block, you may gain 1 Strain to make a free attack.",
+                    "position": [
+                        2,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s13",
+                    "name": "TWIN STRIKE",
+                    "description": "When you discard a Skullduggery to make a dual wield attack, the extra attack costs 1 less strain than it normally would.",
+                    "position": [
+                        2,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s14",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s15",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s16",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s17",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s18",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s19",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s20",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s21",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s22",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s23",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s24",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s25",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s26",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s27",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s28",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "s29",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        4
+                    ],
+                    "connections": []
+                }
+            ]
+        },
+        {
+            "name": "Athletics",
+            "talents": [
+                {
+                    "id": "a0",
+                    "name": "POUND AND GROUND",
+                    "description": "If you attack an enemy you have grappled, you may also knock them prone.",
+                    "position": [
+                        0,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a1",
+                    "name": "PERSEVERANCE",
+                    "description": "Gain +1 Strain threshold.",
+                    "position": [
+                        0,
+                        1
+                    ],
+                    "connections": [
+                        "a6"
+                    ]
+                },
+                {
+                    "id": "a2",
+                    "name": "MASTER KEY",
+                    "description": "Athletics you spend to break open a lock/door counts as 2 cards. 1/session, as part of a move, you may spend an Athletics card to make a person-sized hole in a wall that wall must not be reinforced with metal or magic, and be less that 1 foot thick.",
+                    "position": [
+                        0,
+                        2
+                    ],
+                    "connections": [
+                        "a7"
+                    ]
+                },
+                {
+                    "id": "a3",
+                    "name": "FOOTWORK",
+                    "description": "The first time you spend an Athletics card each round, you can move 1 zone as part of the same action.",
+                    "position": [
+                        0,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a4",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        0,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a5",
+                    "name": "CULL THE WEAK",
+                    "description": "You can attack minions as a free action.",
+                    "position": [
+                        1,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a6",
+                    "name": "PAIN TOLERANCE",
+                    "description": "Whenever you take damage, you may spend Athletics to reduce that damage by your Exhaustion. ",
+                    "position": [
+                        1,
+                        1
+                    ],
+                    "connections": [
+                        "a7",
+                        "a5",
+                        "a11"
+                    ]
+                },
+                {
+                    "id": "a7",
+                    "name": "ADROIT OPPORTUNITY",
+                    "description": "When you make an opportunity attack, you can draw a replacement skill card.",
+                    "position": [
+                        1,
+                        2
+                    ],
+                    "connections": [
+                        "a8",
+                        "a12"
+                    ]
+                },
+                {
+                    "id": "a8",
+                    "name": "HOUND PREY",
+                    "description": "After making an attack of opportunity, you may move 1 zone with the triggering enemy. You are not engaged.",
+                    "position": [
+                        1,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a9",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        1,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a10",
+                    "name": "WHILE THE IRON IS HOT",
+                    "description": "1/Session\nYou may spend Athletics to take an appropriate action. This action can be taken at any time (even interrupting another's action).",
+                    "position": [
+                        2,
+                        0
+                    ],
+                    "connections": [
+                        "a15"
+                    ]
+                },
+                {
+                    "id": "a11",
+                    "name": "PERSEVERANCE",
+                    "description": "Gain +1 Strain threshold.",
+                    "position": [
+                        2,
+                        1
+                    ],
+                    "connections": [
+                        "a10",
+                        "a16"
+                    ]
+                },
+                {
+                    "id": "a12",
+                    "name": "BLOCK EXPERTISE",
+                    "description": "If you use Athletics to block, treat your block value as double.",
+                    "position": [
+                        2,
+                        2
+                    ],
+                    "connections": [
+                        "a13"
+                    ]
+                },
+                {
+                    "id": "a13",
+                    "name": "REACTIVE BLOCK",
+                    "description": "If you have a shield, you may spend an athletics card to block an attack even if you haven't readied a block.",
+                    "position": [
+                        2,
+                        3
+                    ],
+                    "connections": [
+                        "a18"
+                    ]
+                },
+                {
+                    "id": "a14",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a15",
+                    "name": "BEYOND LIMITS",
+                    "description": "Take 1 Strain. You may spend any skill card as though it were Athletics.",
+                    "position": [
+                        3,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a16",
+                    "name": "CLEAVE",
+                    "description": "When you attack with Athletics, you may take 1 Strain to attack each enemy you're engaged with.",
+                    "position": [
+                        3,
+                        1
+                    ],
+                    "connections": [
+                        "a15"
+                    ]
+                },
+                {
+                    "id": "a17",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a18",
+                    "name": "ONE SHALL STAND",
+                    "description": "After calculating Barrier at the start of your turn, gain +1 Barrier for each enemy you're engaged with.",
+                    "position": [
+                        3,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a19",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a20",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a21",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a22",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a23",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a24",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a25",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a26",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a27",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a28",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "a29",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        4
+                    ],
+                    "connections": []
+                }
+            ]
+        },
+        {
+            "name": "Focus",
+            "talents": [
+                {
+                    "id": "f0",
+                    "name": "INNER FIRE",
+                    "description": "You may discard Focus and take 1 Strain. This counts as paying 1 Anima of your choice.",
+                    "position": [
+                        0,
+                        0
+                    ],
+                    "connections": [
+                        "f5"
+                    ]
+                },
+                {
+                    "id": "f1",
+                    "name": "CONCENTRATION",
+                    "description": "Any time a success involving you requires more than 1 card, you may play a focus card as long as another card is justifying the success.",
+                    "position": [
+                        0,
+                        1
+                    ],
+                    "connections": [
+                        "f0"
+                    ]
+                },
+                {
+                    "id": "f2",
+                    "name": "ELEMENTARY",
+                    "description": "When you spend Focus to investigate, you may piece together unrealistically specific characteristics of an individual or object that's been present in your environment.",
+                    "position": [
+                        0,
+                        2
+                    ],
+                    "connections": [
+                        "f7"
+                    ]
+                },
+                {
+                    "id": "f3",
+                    "name": "FOCUSED STRIKE",
+                    "description": "You may use Focus to attack. If you do, and crit, you may choose your crit effect.",
+                    "position": [
+                        0,
+                        3
+                    ],
+                    "connections": [
+                        "f8"
+                    ]
+                },
+                {
+                    "id": "f4",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        0,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f5",
+                    "name": "FOCUSED PERSEVERANCE",
+                    "description": "Gain +1 Strain threshold.\n\n1/Session\nReduce your Exhaustion by 1",
+                    "position": [
+                        1,
+                        0
+                    ],
+                    "connections": [
+                        "f6",
+                        "f10"
+                    ]
+                },
+                {
+                    "id": "f6",
+                    "name": "GRIT",
+                    "description": "1/Session\nAnytime you would be forced to, Discard, Mill, or Burn a card you may gain 2 strain instead.",
+                    "position": [
+                        1,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f7",
+                    "name": "SENSE WEAKNESS",
+                    "description": "When an enemy flips an Omen, your next damage flip against that enemy crits.",
+                    "position": [
+                        1,
+                        2
+                    ],
+                    "connections": [
+                        "f12"
+                    ]
+                },
+                {
+                    "id": "f8",
+                    "name": "ANIMATED STRIKE",
+                    "description": "Spend anima when you attack for 2 extra damage of that type. Double it if unarmed.",
+                    "position": [
+                        1,
+                        3
+                    ],
+                    "connections": [
+                        "f13"
+                    ]
+                },
+                {
+                    "id": "f9",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        1,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f10",
+                    "name": "GREATER INNER FIRE",
+                    "description": "You may mill a rune and gain 3 Strain to gain 2 Anima of your choice. \n\nThis should be a Vitalist talent.",
+                    "position": [
+                        2,
+                        0
+                    ],
+                    "connections": [
+                        "f15"
+                    ]
+                },
+                {
+                    "id": "f11",
+                    "name": "LASER FOCUS",
+                    "description": "1/Session\nYou may gain 2 Strain to act as though you spent Focus.",
+                    "position": [
+                        2,
+                        1
+                    ],
+                    "connections": [
+                        "f16"
+                    ]
+                },
+                {
+                    "id": "f12",
+                    "name": "HARDENED WILL",
+                    "description": "You may spend a Focus card to nullify a mental ability attempting to be used on you.",
+                    "position": [
+                        2,
+                        2
+                    ],
+                    "connections": [
+                        "f11"
+                    ]
+                },
+                {
+                    "id": "f13",
+                    "name": "FLOW STATE",
+                    "description": "The first time you spend Anima each turn while Channeling, draw a skill card.",
+                    "position": [
+                        2,
+                        3
+                    ],
+                    "connections": [
+                        "f18"
+                    ]
+                },
+                {
+                    "id": "f14",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f15",
+                    "name": "INEXORABLE WILL",
+                    "description": "1/Session\nReduce your Exhaustion to 1.\n\nProblematic with Knowledge talent for gaining extra uses.",
+                    "position": [
+                        3,
+                        0
+                    ],
+                    "connections": [
+                        "f16"
+                    ]
+                },
+                {
+                    "id": "f16",
+                    "name": "CENTERED BREATHS",
+                    "description": "Increase your strain threshold by 2 for each effect you're channeling.",
+                    "position": [
+                        3,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f17",
+                    "name": "RITUALIST",
+                    "description": "1/Session\nWhen you're able to focus without distraction for 10 minutes, you can look through your deck and choose your spell.",
+                    "position": [
+                        3,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f18",
+                    "name": "PARALLEL PROCESSING",
+                    "description": "You may Channel an extra effect concurrently.",
+                    "position": [
+                        3,
+                        3
+                    ],
+                    "connections": [
+                        "f17"
+                    ]
+                },
+                {
+                    "id": "f19",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f20",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f21",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f22",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f23",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f24",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f25",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f26",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f27",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f28",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "f29",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        4
+                    ],
+                    "connections": []
+                }
+            ]
+        },
+        {
+            "name": "Knowledge",
+            "talents": [
+                {
+                    "id": "k0",
+                    "name": "ONE STEP AHEAD",
+                    "description": "Play with the top of your skill deck revealed.",
+                    "position": [
+                        0,
+                        0
+                    ],
+                    "connections": [
+                        "k5"
+                    ]
+                },
+                {
+                    "id": "k1",
+                    "name": "EUREKA!",
+                    "description": "Whenever you flip a Joker, draw a card.",
+                    "position": [
+                        0,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k2",
+                    "name": "STROKE OF GENIUS",
+                    "description": "1/session, you may use a Knowledge card as if it were any skill card.",
+                    "position": [
+                        0,
+                        2
+                    ],
+                    "connections": [
+                        "k7"
+                    ]
+                },
+                {
+                    "id": "k3",
+                    "name": "FORETHOUGHT",
+                    "description": "1/Session\nYou may retroactively have used or prepared mundane gear without spending Edge.",
+                    "position": [
+                        0,
+                        3
+                    ],
+                    "connections": [
+                        "k8"
+                    ]
+                },
+                {
+                    "id": "k4",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        0,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k5",
+                    "name": "PLAN B",
+                    "description": "If you have a Knowledge card in your hand, you may swap it for the top card of your deck.",
+                    "position": [
+                        1,
+                        0
+                    ],
+                    "connections": [
+                        "k6",
+                        "k10"
+                    ]
+                },
+                {
+                    "id": "k6",
+                    "name": "MEMORY PALACE",
+                    "description": "At the beginning of each session, you may pick a card from either of your decks and set it aside this session. You may spend it as if it were in your hand.",
+                    "position": [
+                        1,
+                        1
+                    ],
+                    "connections": [
+                        "k11"
+                    ]
+                },
+                {
+                    "id": "k7",
+                    "name": "CHANGE GEARS",
+                    "description": "1/session, you may tuck your hand and draw up to your hand size",
+                    "position": [
+                        1,
+                        2
+                    ],
+                    "connections": [
+                        "k6"
+                    ]
+                },
+                {
+                    "id": "k8",
+                    "name": "TRINKETEER",
+                    "description": "You can equip an extra trinket. -1 max Edge.\n\nProbably needs to be redone.",
+                    "position": [
+                        1,
+                        3
+                    ],
+                    "connections": [
+                        "k13"
+                    ]
+                },
+                {
+                    "id": "k9",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        1,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k10",
+                    "name": "VERSATILE CASTING",
+                    "description": "You can have an extra rune displayed.",
+                    "position": [
+                        2,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k11",
+                    "name": "OF MANY MINDS",
+                    "description": "If you spend two knowledge cards in the same turn, look at a number of cards from your deck equal to your exhaustion and put a card into your hand.",
+                    "position": [
+                        2,
+                        1
+                    ],
+                    "connections": [
+                        "k12",
+                        "k16"
+                    ]
+                },
+                {
+                    "id": "k12",
+                    "name": "PERSEVERANCE",
+                    "description": "Gain +1 Strain threshold.",
+                    "position": [
+                        2,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k13",
+                    "name": "PRACTICED ABSORPTION",
+                    "description": "When you absorb Anima, you may discard Knowledge to gain 1 extra anima of the same type.",
+                    "position": [
+                        2,
+                        3
+                    ],
+                    "connections": [
+                        "k18",
+                        "k12"
+                    ]
+                },
+                {
+                    "id": "k14",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k15",
+                    "name": "QUICK WIT",
+                    "description": "1/Session\nWhen an enemy flips a Joker for behavior, you may immediately perform 1 action.",
+                    "position": [
+                        3,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k16",
+                    "name": "TIME-BORROWED INSIGHT",
+                    "description": "Burn Knowledge. Recharge one of your 1/Session abilities.\n\nCould be a Breacher talent?",
+                    "position": [
+                        3,
+                        1
+                    ],
+                    "connections": [
+                        "k15"
+                    ]
+                },
+                {
+                    "id": "k17",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k18",
+                    "name": "UNIFIED THEORY",
+                    "description": "1/Session you can spend Anima as though it were Edge.",
+                    "position": [
+                        3,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k19",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k20",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k21",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k22",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k23",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k24",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k25",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k26",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k27",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k28",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "k29",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        4
+                    ],
+                    "connections": []
+                }
+            ]
+        },
+        {
+            "name": "Social",
+            "talents": [
+                {
+                    "id": "o0",
+                    "name": "LIFE OF THE PARTY",
+                    "description": "1/Session\nWhenever you Catch Your Breath, you may lower your other allies' exhaustion by 1. Take 1 Strain for each of those allies after the rest.",
+                    "position": [
+                        0,
+                        0
+                    ],
+                    "connections": [
+                        "o5"
+                    ]
+                },
+                {
+                    "id": "o1",
+                    "name": "TACTICIAN",
+                    "description": "Spend Social to allow an ally to move 1 zone.",
+                    "position": [
+                        0,
+                        1
+                    ],
+                    "connections": [
+                        "o6"
+                    ]
+                },
+                {
+                    "id": "o2",
+                    "name": "UNITED FRONT",
+                    "description": "Whenever you spend Social when another ally is in your zone, you both gain Barrier equal to your Exhaustion.",
+                    "position": [
+                        0,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o3",
+                    "name": "KNOW A GUY",
+                    "description": "1/Session\nYou may remember that you have an acquaintance relevant to your needs who's reasonably nearby without spending Edge. GM must approve.",
+                    "position": [
+                        0,
+                        3
+                    ],
+                    "connections": [
+                        "o8"
+                    ]
+                },
+                {
+                    "id": "o4",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        0,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o5",
+                    "name": "COMRADERY",
+                    "description": "Whenever you Catch Your Breath, and you're not alone, you may reset your Strain to -2 instead of 0.",
+                    "position": [
+                        1,
+                        0
+                    ],
+                    "connections": [
+                        "o10"
+                    ]
+                },
+                {
+                    "id": "o6",
+                    "name": "TACTICAL STRIKE",
+                    "description": "You may spend a Social to allow an ally to make an attack without spending a card.",
+                    "position": [
+                        1,
+                        1
+                    ],
+                    "connections": [
+                        "o7",
+                        "o11"
+                    ]
+                },
+                {
+                    "id": "o7",
+                    "name": "PERSEVERANCE",
+                    "description": "Gain +1 Strain threshold.",
+                    "position": [
+                        1,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o8",
+                    "name": "DO YOU KNOW WHO I AM?!",
+                    "description": "When you have no Edge, your Social cards count double when negotiating success.\n\n(Probably needs rework)",
+                    "position": [
+                        1,
+                        3
+                    ],
+                    "connections": [
+                        "o13",
+                        "o7"
+                    ]
+                },
+                {
+                    "id": "o9",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        1,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o10",
+                    "name": "ARCANE UNITY",
+                    "description": "Whenever an ally within range 1 absorbs Anima, you may discard Social to also count as absorbing that Anima.",
+                    "position": [
+                        2,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o11",
+                    "name": "TAG TEAM",
+                    "description": "Deal extra damage to targets equal to the number of other allies engaged with them.",
+                    "position": [
+                        2,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o12",
+                    "name": "THREATENING PRESENCE",
+                    "description": "1/Session\nEnemies within Range 1 become frighted of you for 1 round.",
+                    "position": [
+                        2,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o13",
+                    "name": "PASSIVE INCOME",
+                    "description": "1/Session\nUse wealth without spending Edge.\n\n(Probably needs rework)",
+                    "position": [
+                        2,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o14",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o15",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o16",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o17",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o18",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o19",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o20",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o21",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o22",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o23",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o24",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o25",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o26",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o27",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o28",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "o29",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        4
+                    ],
+                    "connections": []
+                }
+            ]
+        },
+        {
+            "name": "Shaper",
+            "talents": [
+                {
+                    "id": "h0",
+                    "name": "BURDEN OF STONE",
+                    "description": "When you cast a Terra Aligned spell that effects 1 or more enemies, choose 1 of them. It becomes Slowed until the end of its next turn.",
+                    "position": [
+                        0,
+                        0
+                    ],
+                    "connections": [
+                        "h1",
+                        "h5"
+                    ]
+                },
+                {
+                    "id": "h1",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        0,
+                        1
+                    ],
+                    "connections": [
+                        "h6"
+                    ]
+                },
+                {
+                    "id": "h2",
+                    "name": "RADIANT",
+                    "description": "When you cast a Sol Aligned spell, you may emit a surge of light to deal 1 Sol damage to each other creature in your zone.",
+                    "position": [
+                        0,
+                        2
+                    ],
+                    "connections": [
+                        "h7",
+                        "h4",
+                        "h1"
+                    ]
+                },
+                {
+                    "id": "h3",
+                    "name": "VEILCRAFT",
+                    "description": "When you cast a Luna Aligned spell targeting a zone, you may shroud one those zones in darkness until the end of your next turn.",
+                    "position": [
+                        0,
+                        4
+                    ],
+                    "connections": [
+                        "h8",
+                        "h4"
+                    ]
+                },
+                {
+                    "id": "h4",
+                    "name": "ANIMA WARD",
+                    "description": "Whenever you cast an Aligned spell, gain 1 Barrier.",
+                    "position": [
+                        0,
+                        3
+                    ],
+                    "connections": [
+                        "h9"
+                    ]
+                },
+                {
+                    "id": "h5",
+                    "name": "IMMUTABLE",
+                    "description": "During Terran phase, the first time you take damage each round, gain 2 Barrier.",
+                    "position": [
+                        1,
+                        0
+                    ],
+                    "connections": [
+                        "h10"
+                    ]
+                },
+                {
+                    "id": "h6",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        1,
+                        1
+                    ],
+                    "connections": [
+                        "h11"
+                    ]
+                },
+                {
+                    "id": "h7",
+                    "name": "CELERITAS",
+                    "description": "During Solar phase, you gain 1 free action on each of your turns.",
+                    "position": [
+                        1,
+                        2
+                    ],
+                    "connections": [
+                        "h12"
+                    ]
+                },
+                {
+                    "id": "h8",
+                    "name": "VORTICAL",
+                    "description": "At the start of your turn during Lunar phase, you may move one creature or object, within Range 1, into your zone. Or engage a creature already in your zone.",
+                    "position": [
+                        1,
+                        4
+                    ],
+                    "connections": [
+                        "h14"
+                    ]
+                },
+                {
+                    "id": "h9",
+                    "name": "ARCANE INTENSITY",
+                    "description": "Aligned spells deal +1 damage.",
+                    "position": [
+                        1,
+                        3
+                    ],
+                    "connections": [
+                        "h9",
+                        "h13"
+                    ]
+                },
+                {
+                    "id": "h10",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        0
+                    ],
+                    "connections": [
+                        "h11",
+                        "h15"
+                    ]
+                },
+                {
+                    "id": "h11",
+                    "name": "SUMMON ELEMENTAL",
+                    "description": "1/Session\nSummon an elemental. Choose it's Element when you summon it. ",
+                    "position": [
+                        2,
+                        1
+                    ],
+                    "connections": [
+                        "h12",
+                        "h16"
+                    ]
+                },
+                {
+                    "id": "h12",
+                    "name": "RUNIC OVERLOAD",
+                    "description": "When casting a spell, you may use an Intent and Form from the same card without paying Anima. Burn that card.",
+                    "position": [
+                        2,
+                        2
+                    ],
+                    "connections": [
+                        "h13",
+                        "h17"
+                    ]
+                },
+                {
+                    "id": "h13",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        3
+                    ],
+                    "connections": [
+                        "h18"
+                    ]
+                },
+                {
+                    "id": "h14",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        4
+                    ],
+                    "connections": [
+                        "h13",
+                        "h19"
+                    ]
+                },
+                {
+                    "id": "h15",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        0
+                    ],
+                    "connections": [
+                        "h20"
+                    ]
+                },
+                {
+                    "id": "h16",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "h17",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        2
+                    ],
+                    "connections": [
+                        "h22"
+                    ]
+                },
+                {
+                    "id": "h18",
+                    "name": "SHAPE ALIGNMENT",
+                    "description": "When you cast an aligned spell, you may override the Form element to match the Intent.",
+                    "position": [
+                        3,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "h19",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        4
+                    ],
+                    "connections": [
+                        "h19",
+                        "h24"
+                    ]
+                },
+                {
+                    "id": "h20",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "h21",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "h22",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "h23",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "h24",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "h25",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "h26",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "h27",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "h28",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "h29",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        4
+                    ],
+                    "connections": []
+                }
+            ]
+        },
+        {
+            "name": "Vitalist",
+            "talents": [
+                {
+                    "id": "v0",
+                    "name": "VERDANT STRIDE",
+                    "description": "Non-hostile, non-sentient life accommodates your passing. Living obstacles that would hinder another instead passively assist you.",
+                    "position": [
+                        0,
+                        0
+                    ],
+                    "connections": [
+                        "v5"
+                    ]
+                },
+                {
+                    "id": "v1",
+                    "name": "VIRTUE'S REWARD",
+                    "description": "Whenever you cast a Life spell that targets your allies, gain a free action this turn.",
+                    "position": [
+                        0,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v2",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        0,
+                        2
+                    ],
+                    "connections": [
+                        "v7"
+                    ]
+                },
+                {
+                    "id": "v3",
+                    "name": "SPIRIT SENSE",
+                    "description": "When you spend Anima, until the start of your next turn, you gain a special sense with range 2.\n\nLuna: Night vision\nTerra:  Tremorsense\nSol: Lifesense",
+                    "position": [
+                        0,
+                        3
+                    ],
+                    "connections": [
+                        "v8"
+                    ]
+                },
+                {
+                    "id": "v4",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        0,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v5",
+                    "name": "LIFE'S ABUNDANCE",
+                    "description": "Whenever you cast a Life spell, you may take 1 Strain to gain 1 Sol Anima.",
+                    "position": [
+                        1,
+                        0
+                    ],
+                    "connections": [
+                        "v6"
+                    ]
+                },
+                {
+                    "id": "v6",
+                    "name": "SHAPESHIFT",
+                    "description": "Channel\nYou shapeshift into a mundane creature between 1/2 and double your size.",
+                    "position": [
+                        1,
+                        1
+                    ],
+                    "connections": [
+                        "v11"
+                    ]
+                },
+                {
+                    "id": "v7",
+                    "name": "RESURGE",
+                    "description": "Whenever a Protect effect is put on you, gain +1 to the next damage you inflict. This bonus doesn't stack.",
+                    "position": [
+                        1,
+                        2
+                    ],
+                    "connections": [
+                        "v12",
+                        "v6"
+                    ]
+                },
+                {
+                    "id": "v8",
+                    "name": "SUMMON SPECTER",
+                    "description": "1/Session\nSummon a specter. Pick either Luna or Sol for its starting form. Paying Luna or Sol for it's upkeep changes it to the corresponding form (no change for Terra).",
+                    "position": [
+                        1,
+                        3
+                    ],
+                    "connections": [
+                        "v13"
+                    ]
+                },
+                {
+                    "id": "v9",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        1,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v10",
+                    "name": "SACRIFICIAL SPITE",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v11",
+                    "name": "PROTEAN FORMS",
+                    "description": "Less restrictions in some way?",
+                    "position": [
+                        2,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v12",
+                    "name": "BLOOD MAGIC",
+                    "description": "1/Turn\nTake 1 direct damage. Until the end of your turn, you may use the discarded card to cast a spell.",
+                    "position": [
+                        2,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v13",
+                    "name": "Cool specter stuff",
+                    "description": "Cool specter stuff",
+                    "position": [
+                        2,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v14",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v15",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v16",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v17",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v18",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v19",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v20",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v21",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v22",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v23",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v24",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v25",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v26",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v27",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v28",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "v29",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        4
+                    ],
+                    "connections": []
+                }
+            ]
+        },
+        {
+            "name": "Mentalist",
+            "talents": [
+                {
+                    "id": "m0",
+                    "name": "INEXORABLE WILL",
+                    "description": "1/Session\nRecover Strain equal to double your Exhaustion.",
+                    "position": [
+                        0,
+                        0
+                    ],
+                    "connections": [
+                        "m1",
+                        "m5"
+                    ]
+                },
+                {
+                    "id": "m1",
+                    "name": "RAGE",
+                    "description": "Channel Luna/Sol\n\nInstead of gaining Exhaustion, take damage for each Strain beyond your threshold.\n- Luna: Add half your Strain to as extra damage.\n- Sol: Recover 1 Strain.",
+                    "position": [
+                        0,
+                        1
+                    ],
+                    "connections": [
+                        "m6"
+                    ]
+                },
+                {
+                    "id": "m2",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        0,
+                        2
+                    ],
+                    "connections": [
+                        "m1"
+                    ]
+                },
+                {
+                    "id": "m3",
+                    "name": "ATTITUDE ADJUSTMENT",
+                    "description": "When you cast a Mind spell that affects 1 or more enemies, chose 1 of them. Pick that enemy's behavior for the next round.",
+                    "position": [
+                        0,
+                        3
+                    ],
+                    "connections": [
+                        "m8"
+                    ]
+                },
+                {
+                    "id": "m4",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        0,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m5",
+                    "name": "SELFISH EMPATHY",
+                    "description": "When an enemy damages you, you may take 1 Strain to deal the same damage back.",
+                    "position": [
+                        1,
+                        0
+                    ],
+                    "connections": [
+                        "m10"
+                    ]
+                },
+                {
+                    "id": "m6",
+                    "name": "FUELED BY FURY",
+                    "description": "The first time you are damaged each round, gain 1 Luna.",
+                    "position": [
+                        1,
+                        1
+                    ],
+                    "connections": [
+                        "m11"
+                    ]
+                },
+                {
+                    "id": "m7",
+                    "name": "PHRENIC INTERFERENCE",
+                    "description": "Whenever you affect an enemy with a Mind spell, you immediately end any effects that it's channeling.",
+                    "position": [
+                        1,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m8",
+                    "name": "DOMINATE MIND",
+                    "description": "1/Session\nYou may control any non Elite creature for as long as you Channel this ability. Counts as a Summon.",
+                    "position": [
+                        1,
+                        3
+                    ],
+                    "connections": [
+                        "m13"
+                    ]
+                },
+                {
+                    "id": "m9",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        1,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m10",
+                    "name": "MANTRA GUARD",
+                    "description": "Gain 1 barrier for each effect you're channeling at the end of your turn.",
+                    "position": [
+                        2,
+                        0
+                    ],
+                    "connections": [
+                        "m11"
+                    ]
+                },
+                {
+                    "id": "m11",
+                    "name": "MANIC REAPING",
+                    "description": "The First time you deal damage with an attack each round, gain 1 Sol.",
+                    "position": [
+                        2,
+                        1
+                    ],
+                    "connections": [
+                        "m16"
+                    ]
+                },
+                {
+                    "id": "m12",
+                    "name": "PARALLEL PROCESSING",
+                    "description": "You may Channel an extra effect concurrently.",
+                    "position": [
+                        2,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m13",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        3
+                    ],
+                    "connections": [
+                        "m12"
+                    ]
+                },
+                {
+                    "id": "m14",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m15",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m16",
+                    "name": "ANIMA RAGE",
+                    "description": "While raging if Sol was spent instead reduce strain by [Flip] before you calculate rage damage.\n\nWhile raging if Luna was spent in addition to the added damage add +1 for every 2 strain above threshold.",
+                    "position": [
+                        3,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m17",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m18",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m19",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m20",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m21",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m22",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m23",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m24",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m25",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m26",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m27",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m28",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "m29",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        4
+                    ],
+                    "connections": []
+                }
+            ]
+        },
+        {
+            "name": "Breacher",
+            "talents": [
+                {
+                    "id": "b0",
+                    "name": "GLIMPSE THE HORIZON",
+                    "description": "Play with the top card of your spell deck revealed.",
+                    "position": [
+                        0,
+                        0
+                    ],
+                    "connections": [
+                        "b5"
+                    ]
+                },
+                {
+                    "id": "b1",
+                    "name": "BRIDGE SPACE",
+                    "description": "1/Session\nChoose a zone within range 3. Your zone and the chosen zone count as 1 zone until the end of your next turn. Creatures chose which zone they're in when the effect ends.",
+                    "position": [
+                        0,
+                        1
+                    ],
+                    "connections": [
+                        "b6"
+                    ]
+                },
+                {
+                    "id": "b2",
+                    "name": "FRAME SHIFT",
+                    "description": "When you cast a Warp spell, instead of moving Anima, you may instead flip the phase card. ",
+                    "position": [
+                        0,
+                        2
+                    ],
+                    "connections": [
+                        "b7"
+                    ]
+                },
+                {
+                    "id": "b3",
+                    "name": "DISTORTION SHIELD",
+                    "description": "Gain Barrier equal to your Exhaustion when you cast a Warp spell.",
+                    "position": [
+                        0,
+                        3
+                    ],
+                    "connections": [
+                        "b8"
+                    ]
+                },
+                {
+                    "id": "b4",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        0,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b5",
+                    "name": "SCULPT THE MOMENT",
+                    "description": "When you cast a Warp spell, you may peek at the top GM card. If you have no stored card, you may set it aside. Spend 1 Terra Anima to use the stored card instead of flipping one.",
+                    "position": [
+                        1,
+                        0
+                    ],
+                    "connections": [
+                        "b10"
+                    ]
+                },
+                {
+                    "id": "b6",
+                    "name": "BREACH STEP",
+                    "description": "Whenever you cast a spell that causes you to move or teleport, you may move or teleport an additional zone as part of the effect.",
+                    "position": [
+                        1,
+                        1
+                    ],
+                    "connections": [
+                        "b11",
+                        "b5",
+                        "b7"
+                    ]
+                },
+                {
+                    "id": "b7",
+                    "name": "SUMMON ECHO",
+                    "description": "1/Session\nSummon an echo of yourself.",
+                    "position": [
+                        1,
+                        2
+                    ],
+                    "connections": [
+                        "b12"
+                    ]
+                },
+                {
+                    "id": "b8",
+                    "name": "DISTORTION STRIKE",
+                    "description": "You deal +1 damage to targets with Barrier.",
+                    "position": [
+                        1,
+                        3
+                    ],
+                    "connections": [
+                        "b7"
+                    ]
+                },
+                {
+                    "id": "b9",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        1,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b10",
+                    "name": "VERB THE NOUN",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        0
+                    ],
+                    "connections": [
+                        "b15"
+                    ]
+                },
+                {
+                    "id": "b11",
+                    "name": "INERTIAL DYNAMO",
+                    "description": "Gain 1 Terra Anima when you end your turn in a different zone from where you started.",
+                    "position": [
+                        2,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b12",
+                    "name": "Cool Echo stuff",
+                    "description": "Cool Echo stuff",
+                    "position": [
+                        2,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b13",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b14",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        2,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b15",
+                    "name": "SPLIT THE SECOND",
+                    "description": "1/Session\nDraw a temporary tableaux. Use it to take an extra turn, then discard it after. Burn any cards used on this turn. You may use this ability at any time (even during an enemy's turn).",
+                    "position": [
+                        3,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b16",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b17",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b18",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b19",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        3,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b20",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b21",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b22",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b23",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b24",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        4,
+                        4
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b25",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        0
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b26",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        1
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b27",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        2
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b28",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        3
+                    ],
+                    "connections": []
+                },
+                {
+                    "id": "b29",
+                    "name": "Blank",
+                    "description": "Blank",
+                    "position": [
+                        5,
+                        4
+                    ],
+                    "connections": []
+                }
+            ]
+        }
+    ]
+}
