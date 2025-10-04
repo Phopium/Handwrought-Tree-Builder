@@ -143,9 +143,13 @@ class TalentTreeApp(ctk.CTk):
             self.handle_pos_edit(tree_name, talent_id)
         elif self.edit_text_mode:
             self.open_text_editor(tree_name, talent_id)
+        # Normal tile select
         else:
-            # Normal tile select
-            btn_xp = self.tier_xp_values[column]
+            # Exception for initial tree talent (negative position)
+            if column < 0:
+                btn_xp = 0
+            else:
+                btn_xp = self.tier_xp_values[column]
             btn, _ = self.talent_buttons[tree_name][talent_id]
             key = (tree_name, talent_id)
             
@@ -407,9 +411,17 @@ class TalentTreeApp(ctk.CTk):
             y_spacing =  170
             btn_xp = f"{self.tier_xp_values[x]} XP"
 
-            
-            px, py = x_offset + x * x_spacing, y_offset + y * y_spacing
-            btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=btn_width, height=btn_height, fg_color=default_btn_clr)
+            # Exception for the main tree talent (denoted by negative position)
+            if x < 0 and y < 0:
+                print("negative")
+                btn_xp = ""
+                px, py = 30, 300
+                btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=(btn_width * 1.2), height=(btn_height * 2.5), fg_color=default_btn_clr)
+            # Normal talent tiles
+            else:
+                btn_xp = f"{self.tier_xp_values[x]} XP"
+                px, py = x_offset + x * x_spacing, y_offset + y * y_spacing
+                btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=btn_width, height=btn_height, fg_color=default_btn_clr)
             btn.place(x=px, y=py)
             btn.configure(command=lambda t_id=talent["id"], t_name=tree["name"], column=x, row=y: self.on_talent_click(t_name, t_id, column, row))
             self.talent_buttons[tree["name"]][talent["id"]] = (btn, (px, py))
