@@ -413,7 +413,6 @@ class TalentTreeApp(ctk.CTk):
 
             # Exception for the main tree talent (denoted by negative position)
             if x < 0 and y < 0:
-                print("negative")
                 btn_xp = ""
                 px, py = 30, 300
                 btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=(btn_width * 1.2), height=(btn_height * 2.5), fg_color=default_btn_clr)
@@ -436,6 +435,7 @@ class TalentTreeApp(ctk.CTk):
     def build_tabs(self):
         for i, tree in enumerate(self.data["trees"]):
             tab = self.tabs.add(tree["name"])
+            print(f"Building tab: {tree["name"]}")
             tab.tree_index = i # For getting the tree data later
             tab.canvas_lines = []
             self.populate_tab(tab, tree)
@@ -453,8 +453,11 @@ class TalentTreeApp(ctk.CTk):
     def modify_connection(self, tree_name, from_id, to_id):
         tree = next(t for t in self.data["trees"] if t["name"] == tree_name)
         from_talent = next(t for t in tree["talents"] if t["id"] == from_id)
+        to_talent = next(t for t in tree["talents"] if t["id"] == to_id)
         if to_id in from_talent["connections"]:
             from_talent["connections"].remove(to_id)
+        elif from_id in to_talent["connections"]:
+            to_talent["connections"].remove(from_id)
         else:
             from_talent["connections"].append(to_id)
 
