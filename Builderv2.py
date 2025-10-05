@@ -16,6 +16,8 @@ def loadData(filename: str | None = None):
     
 # Define talent tile GUI attributes
 default_btn_clr = "#3790cc"
+tile_hlight_clr = "#3aa7c9"
+default_tile_clr = "#3A5768"
 btn_width = 165
 btn_height = 100
 initial_tile_posx = 30
@@ -33,8 +35,8 @@ def get_screen_res():
 
 
 class TalentTile(ctk.CTkFrame):
-    def __init__(self, master, text="", textbox_text="", xp_text="", command=None, width=btn_width, height=btn_height, fg_color=default_btn_clr, **kwargs):
-        super().__init__(master, width=width, height=height, fg_color=fg_color, corner_radius=8, **kwargs)
+    def __init__(self, master, text="", textbox_text="", xp_text="", command=None, width=btn_width, height=btn_height, fg_color=default_tile_clr, **kwargs):
+        super().__init__(master, width=width, height=height, fg_color=default_tile_clr, corner_radius=8, **kwargs)
         self.command = command
 
         # Main label
@@ -179,13 +181,13 @@ class TalentTreeApp(ctk.CTk):
                 # Unselect talent
                 tree_xp_total = get_tree_xp()
                 self.selected_talents.remove(key)
-                btn.configure(fg_color=default_btn_clr)
+                btn.configure(fg_color=default_tile_clr)
                 self.xp_spent -= btn_xp + tree_xp_total
                 self.xp_remaining_val.configure(text=(self.xp_total - self.xp_spent))
             else:
                 # Select talent
                 self.selected_talents.add(key)
-                btn.configure(fg_color="green")
+                btn.configure(fg_color=tile_hlight_clr)
                 tree_xp_total = get_tree_xp()
                 self.xp_spent += btn_xp + tree_xp_total
                 self.xp_remaining_val.configure(text=(self.xp_total - self.xp_spent))
@@ -236,9 +238,9 @@ class TalentTreeApp(ctk.CTk):
             for tid, (b, _) in self.talent_buttons[tree_name].items():
                 key = (tree_name, tid)
                 if key in self.selected_talents:
-                    b.configure(fg_color="green")
+                    b.configure(fg_color=tile_hlight_clr)
                 else:
-                    b.configure(fg_color=default_btn_clr)
+                    b.configure(fg_color=default_tile_clr)
             
             # Get tab info
             this_tab_name = self.tabs.get()
@@ -269,9 +271,9 @@ class TalentTreeApp(ctk.CTk):
             for tid, (b, _) in self.talent_buttons[tree_name].items():
                 key = (tree_name, tid)
                 if key in self.selected_talents:
-                    b.configure(fg_color="green")
+                    b.configure(fg_color=tile_hlight_clr)
                 else:
-                    b.configure(fg_color=default_btn_clr)
+                    b.configure(fg_color=default_tile_clr)
             
             self.reset_tab()    
     
@@ -373,9 +375,9 @@ class TalentTreeApp(ctk.CTk):
             for tid, (btn, _) in talents.items():
                 key = (tree_name, tid)
                 if key in self.selected_talents:
-                    btn.configure(fg_color="green")
+                    btn.configure(fg_color=tile_hlight_clr)
                 else:
-                    btn.configure(fg_color=default_btn_clr)
+                    btn.configure(fg_color=default_tile_clr)
         
     def save_character(self):
         # Build character file
@@ -428,18 +430,18 @@ class TalentTreeApp(ctk.CTk):
             if x < 0 and y < 0:
                 btn_xp = ""
                 px, py = initial_tile_posx, initial_tile_posy
-                btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=(btn_width * 1.2), height=(btn_height * 2.5), fg_color=default_btn_clr)
+                btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=(btn_width * 1.2), height=(btn_height * 2.5), fg_color=default_tile_clr)
             # Normal talent tiles
             else:
                 btn_xp = f"{self.tier_xp_values[x]} XP"
                 px, py = x_offset + x * x_spacing, y_offset + y * y_spacing
-                btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=btn_width, height=btn_height, fg_color=default_btn_clr)
+                btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=btn_width, height=btn_height, fg_color=tile_hlight_clr)
             btn.place(x=px, y=py)
             btn.configure(command=lambda t_id=talent["id"], t_name=tree["name"], column=x, row=y: self.on_talent_click(t_name, t_id, column, row))
             self.talent_buttons[tree["name"]][talent["id"]] = (btn, (px, py))
             key = (tree["name"], talent["id"])
             if key in self.selected_talents:
-                btn.configure(fg_color="green")
+                btn.configure(fg_color=tile_hlight_clr)
 
         # Draw connection lines
         self.draw_connections(tree, frame.canvas)
@@ -474,7 +476,7 @@ class TalentTreeApp(ctk.CTk):
                     s_offsetx, s_offsety = self._get_line_offsets(sx, initial_tile_posx, btn_width, btn_height)
                     e_offsetx, e_offsety = self._get_line_offsets(ex, initial_tile_posx, btn_width, btn_height)
                     
-                    line_id = canvas.create_line(sx + s_offsetx, sy + s_offsety, ex + e_offsetx, ey + e_offsety, fill="light gray", width=2)
+                    line_id = canvas.create_line(sx + s_offsetx, sy + s_offsety, ex + e_offsetx, ey + e_offsety, fill="#76d8ff", width=2)
                     canvas.lines.append(line_id)
 
 
