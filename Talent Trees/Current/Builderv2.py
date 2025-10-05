@@ -18,6 +18,8 @@ def loadData(filename: str | None = None):
 default_btn_clr = "#3790cc"
 btn_width = 165
 btn_height = 100
+initial_tile_posx = 30
+initial_tile_posy = 300
 
 starting_xp = "10"
 
@@ -87,7 +89,7 @@ class TalentTreeApp(ctk.CTk):
         self.grid_rowconfigure(1, weight=1)
         self.grid_columnconfigure(0, weight=1)
 
-        # Info frame
+        #= Info frame =
         self.info_frame = ctk.CTkFrame(self, height=120)
         self.info_frame.grid(row=0, column=0, padx=5, pady=5, sticky="new")
 
@@ -123,7 +125,7 @@ class TalentTreeApp(ctk.CTk):
         self.save_json_btn = ctk.CTkButton(self.info_btn_frame, text="Save Changes", command=self.save_data)
         self.save_json_btn.grid(row=1, column=3, padx=5, pady=5)
 
-        # Tree frame
+        #= Tree frame =
         self.tree_frame = ctk.CTkFrame(self)
         self.tree_frame.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
 
@@ -414,7 +416,7 @@ class TalentTreeApp(ctk.CTk):
             # Exception for the main tree talent (denoted by negative position)
             if x < 0 and y < 0:
                 btn_xp = ""
-                px, py = 30, 300
+                px, py = initial_tile_posx, initial_tile_posy
                 btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=(btn_width * 1.2), height=(btn_height * 2.5), fg_color=default_btn_clr)
             # Normal talent tiles
             else:
@@ -441,12 +443,27 @@ class TalentTreeApp(ctk.CTk):
             self.populate_tab(tab, tree)
 
 
+    def _get_line_offsets(self, x_pos, initial_x, btn_width, btn_height):
+        """Helper function to calculate offsets based on x-position."""
+        # Exception for initial tree tile
+        if x_pos == initial_x:
+            offset_x = btn_width * 0
+            offset_y = btn_height * 1.35
+        else:
+            offset_x = btn_width / 2
+            offset_y = btn_height / 1.5
+        return offset_x, offset_y
+
+
     def draw_connections(self, tree, canvas):
         for talent in tree["talents"]:
                 sx, sy = self.talent_buttons[tree["name"]][talent["id"]][1]
                 for conn_id in talent["connections"]:
                     ex, ey = self.talent_buttons[tree["name"]][conn_id][1]
-                    line_id = canvas.create_line(sx + (btn_width/2), sy + (btn_height/1.5), ex + (btn_width/2), ey + (btn_height/1.5), fill="light gray", width=2)
+                    s_offsetx, s_offsety = self._get_line_offsets(sx, initial_tile_posx, btn_width, btn_height)
+                    e_offsetx, e_offsety = self._get_line_offsets(ex, initial_tile_posx, btn_width, btn_height)
+                    
+                    line_id = canvas.create_line(sx + s_offsetx, sy + s_offsety, ex + e_offsetx, ey + e_offsety, fill="light gray", width=2)
                     canvas.lines.append(line_id)
 
 
