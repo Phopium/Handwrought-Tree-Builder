@@ -2,7 +2,7 @@ from pathlib import Path
 import customtkinter as ctk
 import json
 import tkinter.filedialog as fd
-import os
+
 
 ctk.set_appearance_mode("dark")
 
@@ -472,8 +472,10 @@ class TalentTreeApp(ctk.CTk):
         from_talent["position"], to_talent["position"] = to_pos, from_pos
 
 
-    def save_data(self, filename="Current/data.json"):
-        with open(filename, "w") as f:
+    def save_data(self, filename="data.json"):
+        here = Path(__file__).resolve().parent
+        file = here / filename
+        with open(file, "w") as f:
             json.dump(self.data, f, indent=4)
             
     
