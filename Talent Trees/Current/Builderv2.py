@@ -1,7 +1,7 @@
 from pathlib import Path
 import customtkinter as ctk
 import json
-import tkinter.filedialog as fd
+import tkinter as tk
 
 
 ctk.set_appearance_mode("dark")
@@ -22,6 +22,14 @@ initial_tile_posx = 30
 initial_tile_posy = 300
 
 starting_xp = "10"
+
+def get_screen_res():
+    root_window = tk.Tk()
+    root_window.withdraw()
+    screen_width = root_window.winfo_screenwidth()
+    screen_height = root_window.winfo_screenheight()
+    root_window.destroy()
+    return screen_height
 
 
 class TalentTile(ctk.CTkFrame):
@@ -69,7 +77,10 @@ class TalentTreeApp(ctk.CTk):
     def __init__(self, data):
         super().__init__()
         self.title("Talent Tree Builder")
-        self.geometry("1520x900")
+        if get_screen_res() > 1200:
+            self.geometry("1520x1100")
+        else:
+            self.geometry("1520x900")
         self.data = data
 
         self.selected_talents = set()
@@ -324,7 +335,7 @@ class TalentTreeApp(ctk.CTk):
         top.grid_columnconfigure(0, weight=1)
 
     def load_character(self):
-        path = fd.askopenfilename(title="Open character JSON", filetypes=[("JSON Files","*.json"),("All files","*.*")])
+        path = tk.filedialog.askopenfilename(title="Open character JSON", filetypes=[("JSON Files","*.json"),("All files","*.*")])
         if not path:
             return
         try:
@@ -374,7 +385,7 @@ class TalentTreeApp(ctk.CTk):
             "xp_spent": self.xp_spent
         }
         # Ask for a filename to save to (asksaveas gives file selection)
-        path = fd.asksaveasfilename(title="Export character as...", defaultextension=".json",
+        path = tk.filedialog.asksaveasfilename(title="Export character as...", defaultextension=".json",
                                     filetypes=[("JSON Files","*.json"),("All files","*.*")])
         if not path:
             return
@@ -399,8 +410,8 @@ class TalentTreeApp(ctk.CTk):
         frame.canvas.pack(fill="both", expand=True)
         frame.canvas.lines = []
         self.tab_frames[tree["name"]] = frame
-        tab_lbl = ctk.CTkLabel(frame.canvas, text=tree["name"], font=("TkDefaultFont", 24))
-        tab_lbl.place(relx=.05, rely=.1)
+        tab_lbl = ctk.CTkLabel(frame.canvas, text=tree["name"], font=("TkDefaultFont", 30))
+        tab_lbl.place(relx=.03, rely=.05)
 
         self.talent_buttons[tree["name"]] = {}
 

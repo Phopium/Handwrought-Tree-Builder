@@ -768,7 +768,7 @@
                 {
                     "id": "f8",
                     "name": "ANIMATED STRIKE",
-                    "description": "Spend anima when you attack for 2 extra damage of that type. Double it if unarmed.",
+                    "description": "You may spend 1 anima when you attack for 1 extra damage of that type. Double it if unarmed.",
                     "position": [
                         1,
                         3
@@ -1007,7 +1007,11 @@
                         -1,
                         -1
                     ],
-                    "connections": []
+                    "connections": [
+                        "f1",
+                        "f2",
+                        "f3"
+                    ]
                 }
             ]
         },
