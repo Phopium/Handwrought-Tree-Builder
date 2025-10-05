@@ -1,0 +1,37 @@
+{
+  "tabs": [
+    {
+      "name": "Breacher",
+      "buttons": [
+        {"position": 1, "treeTier": 1, "label": "Strike", "description": "A powerful melee attack."},
+        {"position": 2, "treeTier": 1, "label": "Block", "description": "Raise your shield to block damage."},
+        {"position": 3, "treeTier": 1, "label": "Charge", "description": "Rush forward into the enemy."},
+        {"position": 1, "treeTier": 2, "label": "Smash", "description": "Break armor with brute force."},
+        {"position": 2, "treeTier": 2, "label": "Parry", "description": "Deflect an incoming attack."},
+        {"position": 3, "treeTier": 2, "label": "Dodge", "description": "Quickly move out of the way."}
+      ]
+    },
+    {
+      "name": "Engineer",
+      "buttons": [
+        {"position": 1, "treeTier": 1, "label": "Build", "description": "Construct useful items."},
+        {"position": 2, "treeTier": 1, "label": "Block", "description": "Raise your shield to block damage."},
+        {"position": 3, "treeTier": 1, "label": "Make Money", "description": "Increase resources."},
+        {"position": 1, "treeTier": 2, "label": "Smash", "description": "Break armor with brute force."},
+        {"position": 2, "treeTier": 2, "label": "Study", "description": "Learn new techniques."},
+        {"position": 3, "treeTier": 2, "label": "Dodge", "description": "Quickly move out of the way."}
+      ]
+    },
+    {
+      "name": "Vitalist",
+      "buttons": [
+        {"position": 1, "treeTier": 1, "label": "Heal", "description": "Restore health."},
+        {"position": 2, "treeTier": 1, "label": "Block", "description": "Raise your shield to block damage."},
+        {"position": 3, "treeTier": 1, "label": "Magic", "description": "Cast powerful spells."},
+        {"position": 1, "treeTier": 2, "label": "Drain", "description": "Siphon life energy."},
+        {"position": 2, "treeTier": 2, "label": "Empower", "description": "Boost abilities."},
+        {"position": 3, "treeTier": 2, "label": "Tree of Life", "description": "Restore vitality to allies."}
+      ]
+    }
+  ]
+}

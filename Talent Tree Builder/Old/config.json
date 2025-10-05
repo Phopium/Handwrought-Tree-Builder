@@ -1,0 +1,12 @@
+{
+  "buttons": [
+    { "label": "Strike", "treeTier": 1, "position": 1 },
+    { "label": "Smash", "treeTier": 2, "position": 1 },
+    { "label": "Block", "treeTier": 1, "position": 2 },
+    { "label": "Parry", "treeTier": 2, "position": 2 }
+  ],
+  "connections": [
+    ["Strike", "Smash"],
+    ["Block", "Parry"]
+  ]
+}
