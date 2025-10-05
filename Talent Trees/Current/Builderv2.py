@@ -281,7 +281,7 @@ class TalentTreeApp(ctk.CTk):
 
         # Body (description)
         ctk.CTkLabel(top, text="Description:").grid(row=2, column=0, padx=8, pady=(4,4), sticky="w")
-        body_tb = ctk.CTkTextbox(top, width=400, height=200)
+        body_tb = ctk.CTkTextbox(top, width=400, height=200, wrap="word")
         body_tb.grid(row=3, column=0, padx=8, pady=(0,8), sticky="nsew")
         body_text = talent.get("description", talent.get("text", ""))
         if body_text:

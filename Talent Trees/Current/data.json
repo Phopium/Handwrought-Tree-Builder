@@ -1717,7 +1717,8 @@
                     "connections": [
                         "h7",
                         "h4",
-                        "h1"
+                        "h1",
+                        "h30"
                     ]
                 },
                 {
@@ -2029,13 +2030,16 @@
                 },
                 {
                     "id": "h30",
-                    "name": "Main",
-                    "description": "Blank",
+                    "name": "Anima Alignment",
+                    "description": "You may take 1 Strain when you cast a spell to change the Anima Phase card to match the spell's Element (Luna/Terra/Sol).\n\nWhenever the Element of the Anima Phase card matches the Element of a spell you cast, that spell becomes Aligned.",
                     "position": [
                         -1,
                         -1
                     ],
-                    "connections": []
+                    "connections": [
+                        "h0",
+                        "h3"
+                    ]
                 }
             ]
         },
@@ -2359,13 +2363,18 @@
                 },
                 {
                     "id": "v30",
-                    "name": "Main",
-                    "description": "Blank",
+                    "name": "Life Magic",
+                    "description": "You're able to affect the vital essence of all living things, either bolstering, weakening, or transforming.\n\nLife spells that affect you and your allies also Heal 1. Life spells that affect enemies Heal you 1.",
                     "position": [
                         -1,
                         -1
                     ],
-                    "connections": []
+                    "connections": [
+                        "v0",
+                        "v1",
+                        "v2",
+                        "v3"
+                    ]
                 }
             ]
         },
@@ -2697,8 +2706,8 @@
                 },
                 {
                     "id": "m30",
-                    "name": "Main",
-                    "description": "Blank",
+                    "name": "Mind Magic",
+                    "description": "You may take 1 Strain when you cast a Mind spell to tuck a card and draw a new one.",
                     "position": [
                         -1,
                         -1
@@ -2734,7 +2743,8 @@
                         1
                     ],
                     "connections": [
-                        "b6"
+                        "b6",
+                        "b2"
                     ]
                 },
                 {
@@ -2758,7 +2768,8 @@
                         3
                     ],
                     "connections": [
-                        "b8"
+                        "b8",
+                        "b2"
                     ]
                 },
                 {
@@ -3035,13 +3046,17 @@
                 },
                 {
                     "id": "b30",
-                    "name": "Main",
-                    "description": "Blank",
+                    "name": "Warp Magic",
+                    "description": "Manipulate the fabric of reality itself. Echoes made real, deeds undone and rewritten; what is reality if not what you wish for it to be?\n\nWhen you cast a Warp spell, you may move the nearest Anima 1 zone.",
                     "position": [
                         -1,
                         -1
                     ],
-                    "connections": []
+                    "connections": [
+                        "b0",
+                        "b1",
+                        "b3"
+                    ]
                 }
             ]
         }
