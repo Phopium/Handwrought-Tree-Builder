@@ -323,7 +323,7 @@
                 {
                     "id": "s30",
                     "name": "Main",
-                    "description": "Blank",
+                    "description": "Add an extra Skullduggery card to your Action deck. This doesn't count toward your deck limit.",
                     "position": [
                         -1,
                         -1
@@ -660,7 +660,7 @@
                 {
                     "id": "a30",
                     "name": "Main",
-                    "description": "Blank",
+                    "description": "Add an extra Athletics card to your Action deck. This doesn't count toward your deck limit.",
                     "position": [
                         -1,
                         -1
@@ -1002,7 +1002,7 @@
                 {
                     "id": "f30",
                     "name": "Main",
-                    "description": "Blank",
+                    "description": "Add an extra Focus card to your Action deck. This doesn't count toward your deck limit.",
                     "position": [
                         -1,
                         -1
@@ -1344,7 +1344,7 @@
                 {
                     "id": "k30",
                     "name": "Main",
-                    "description": "Blank",
+                    "description": "Add an extra Knowledge card to your Action deck. This doesn't count toward your deck limit.",
                     "position": [
                         -1,
                         -1
@@ -1673,7 +1673,7 @@
                 {
                     "id": "o30",
                     "name": "Main",
-                    "description": "Blank",
+                    "description": "Add an extra Social card to your Action deck. This doesn't count toward your deck limit.",
                     "position": [
                         -1,
                         -1

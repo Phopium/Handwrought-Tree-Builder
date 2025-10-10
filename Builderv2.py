@@ -93,7 +93,7 @@ class TalentTreeApp(ctk.CTk):
         self.pos_edit_buffer = None
         self.text_edit_buffer = None
         self.talent_buttons = {}  # {tree_name: {id: (button, position)}}
-        self.tier_xp_values = [4, 6, 8, 10, 12, 14]
+        self.tier_xp_values = [4, 6, 8, 8, 10, 10]
         self.tree_xp_cost = 8
         self.xp_spent = 0
         self.xp_total = int(starting_xp)
