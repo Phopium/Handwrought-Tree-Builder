@@ -2,6 +2,7 @@ from pathlib import Path
 import customtkinter as ctk
 import json
 import tkinter as tk
+from supabase import create_client, Client
 
 
 ctk.set_appearance_mode("dark")

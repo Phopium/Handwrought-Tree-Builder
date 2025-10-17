@@ -148,7 +148,10 @@
                         2,
                         2
                     ],
-                    "connections": []
+                    "connections": [
+                        "s12",
+                        "s13"
+                    ]
                 },
                 {
                     "id": "s13",
@@ -360,7 +363,7 @@
                 {
                     "id": "a2",
                     "name": "MASTER KEY",
-                    "description": "Athletics you spend to break open a lock/door counts as 2 cards. 1/session, as part of a move, you may spend an Athletics card to make a person-sized hole in a wall that wall must not be reinforced with metal or magic, and be less that 1 foot thick.",
+                    "description": "Athletics you spend to break open a lock/door counts as 2 cards. \n\n1/session\nWhen you spend Athletics to move, you may make a person-sized hole in a wall that wall that's less that 1 foot thick and not reinforced with metal or magic.",
                     "position": [
                         0,
                         2
@@ -687,7 +690,7 @@
                 {
                     "id": "f1",
                     "name": "CONCENTRATION",
-                    "description": "Any time a success involving you requires more than 1 card, you may play a focus card as long as another card is justifying the success.",
+                    "description": "When you spend at least 1 Focus to succeed, you may tuck any other cards instead of discarding them.",
                     "position": [
                         0,
                         1
