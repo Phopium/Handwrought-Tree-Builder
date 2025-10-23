@@ -4,16 +4,10 @@ import json
 import tkinter as tk
 from supabase import create_client, Client
 
+import supa_tables as supa
 
 ctk.set_appearance_mode("dark")
 
-
-
-def loadData(filename: str | None = None):
-    here = Path(__file__).resolve().parent
-    path = here / (filename or "data.json")   # default: data.json next to Builder.py
-    with path.open("r", encoding="utf-8") as f:
-        return json.load(f)
     
 # Define talent tile GUI attributes
 default_btn_clr = "#3790cc"
@@ -419,37 +413,40 @@ class TalentTreeApp(ctk.CTk):
         self.talent_buttons[tree["name"]] = {}
 
         # Place buttons
-        for talent in tree["talents"]:
-            x, y = talent["position"]
-            x_offset = 275
-            y_offset = 30
-            x_spacing = 200
-            y_spacing =  170
-            btn_xp = f"{self.tier_xp_values[x]} XP"
-
-            # Exception for the main tree talent (denoted by negative position)
-            if x < 0 and y < 0:
-                btn_xp = ""
-                px, py = initial_tile_posx, initial_tile_posy
-                btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=(btn_width * 1.2), height=(btn_height * 2.5), fg_color=default_tile_clr)
-            # Normal talent tiles
-            else:
+        for talent in self.data:
+            if talent["tree"] == tree["name"]:
+                x = talent["x_pos"]
+                y = talent["y_pos"]
+                x_offset = 275
+                y_offset = 30
+                x_spacing = 200
+                y_spacing =  170
                 btn_xp = f"{self.tier_xp_values[x]} XP"
-                px, py = x_offset + x * x_spacing, y_offset + y * y_spacing
-                btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=btn_width, height=btn_height, fg_color=tile_hlight_clr)
-            btn.place(x=px, y=py)
-            btn.configure(command=lambda t_id=talent["id"], t_name=tree["name"], column=x, row=y: self.on_talent_click(t_name, t_id, column, row))
-            self.talent_buttons[tree["name"]][talent["id"]] = (btn, (px, py))
-            key = (tree["name"], talent["id"])
-            if key in self.selected_talents:
-                btn.configure(fg_color=tile_hlight_clr)
+
+                # Exception for the main tree talent (denoted by negative position)
+                if x < 0 and y < 0:
+                    btn_xp = ""
+                    px, py = initial_tile_posx, initial_tile_posy
+                    btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=(btn_width * 1.2), height=(btn_height * 2.5), fg_color=default_tile_clr)
+                # Normal talent tiles
+                else:
+                    btn_xp = f"{self.tier_xp_values[x]} XP"
+                    px, py = x_offset + x * x_spacing, y_offset + y * y_spacing
+                    btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=btn_width, height=btn_height, fg_color=tile_hlight_clr)
+                btn.place(x=px, y=py)
+                btn.configure(command=lambda t_id=talent["id"], t_name=tree["name"], column=x, row=y: self.on_talent_click(t_name, t_id, column, row))
+                self.talent_buttons[tree["name"]][talent["id"]] = (btn, (px, py))
+                key = (tree["name"], talent["id"])
+                if key in self.selected_talents:
+                    btn.configure(fg_color=tile_hlight_clr)
 
         # Draw connection lines
         self.draw_connections(tree, frame.canvas)
 
 
     def build_tabs(self):
-        for i, tree in enumerate(self.data["trees"]):
+        trees = supa.getTrees()
+        for i, tree in enumerate(trees):
             tab = self.tabs.add(tree["name"])
             print(f"Building tab: {tree["name"]}")
             tab.tree_index = i # For getting the tree data later
@@ -470,15 +467,15 @@ class TalentTreeApp(ctk.CTk):
 
 
     def draw_connections(self, tree, canvas):
-        for talent in tree["talents"]:
-                sx, sy = self.talent_buttons[tree["name"]][talent["id"]][1]
-                for conn_id in talent["connections"]:
-                    ex, ey = self.talent_buttons[tree["name"]][conn_id][1]
-                    s_offsetx, s_offsety = self._get_line_offsets(sx, initial_tile_posx, btn_width, btn_height)
-                    e_offsetx, e_offsety = self._get_line_offsets(ex, initial_tile_posx, btn_width, btn_height)
-                    
-                    line_id = canvas.create_line(sx + s_offsetx, sy + s_offsety, ex + e_offsetx, ey + e_offsety, fill="#76d8ff", width=2)
-                    canvas.lines.append(line_id)
+        for talent in self.data:
+            start_x, start_y = self.talent_buttons[tree["name"]][talent["id"]][1]
+            for conn_id in talent["connections"]:
+                end_x, end_y = self.talent_buttons[tree["name"]][conn_id][1]
+                s_offset_x, s_offset_y = self._get_line_offsets(start_x, initial_tile_posx, btn_width, btn_height)
+                e_offset_x, e_offset_y = self._get_line_offsets(end_x, initial_tile_posx, btn_width, btn_height)
+                
+                line_id = canvas.create_line(start_x + s_offset_x, start_y + s_offset_y, end_x + e_offset_x, end_y + e_offset_y, fill="#76d8ff", width=2)
+                canvas.lines.append(line_id)
 
 
     def modify_connection(self, tree_name, from_id, to_id):
@@ -524,5 +521,5 @@ class TalentTreeApp(ctk.CTk):
 if __name__ == "__main__":
     ctk.set_appearance_mode("System")
     ctk.set_default_color_theme("blue")
-    app = TalentTreeApp(loadData())
+    app = TalentTreeApp(supa.loadData())
     app.mainloop()
