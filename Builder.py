@@ -7,10 +7,10 @@ import tkinter as tk
 import ui.config as uicfg
 from ui.tabs import build_tabs, populate_tab, reset_tab
 from ui.talent_tiles import TalentTile, on_talent_click
-from edit_helpers import draw_connections, modify_connection, modify_position
-from edit_modes import handle_connection_edit, handle_pos_edit, open_text_editor
-from info_functions import set_xp_total, load_character, save_character
-import supa_tables as supa
+from logic.edit_helpers import draw_connections, modify_connection, modify_position
+from logic.edit_modes import handle_connection_edit, handle_pos_edit, open_text_editor
+from logic.info_functions import set_xp_total, load_character, save_character
+import logic.supa_tables as supa
 
 
 ctk.set_appearance_mode("dark")
@@ -91,7 +91,7 @@ class TalentTreeApp(ctk.CTk):
         self.tree_frame = ctk.CTkFrame(self)
         self.tree_frame.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
 
-        self.tabs = ctk.CTkTabview(self.tree_frame)
+        self.tabs = ctk.CTkTabview(self.tree_frame, command=self.clr_buffers)
         self.tabs.pack(fill="both", expand=True)
         self.tab_frames = {}
 
@@ -110,7 +110,7 @@ class TalentTreeApp(ctk.CTk):
     draw_connections = draw_connections
     modify_connection = modify_connection
     modify_position = modify_position
-    
+
     # edit_modes
     handle_connection_edit = handle_connection_edit
     handle_pos_edit = handle_pos_edit
@@ -149,6 +149,9 @@ class TalentTreeApp(ctk.CTk):
             self.edit_text_btn.configure(fg_color=uicfg.default_btn_clr)
             self.text_edit_buffer = None
 
+    def clr_buffers(self):
+        self.pos_edit_buffer = None
+        self.connection_edit_buffer = None
 
 
 

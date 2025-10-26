@@ -1,6 +1,6 @@
 import customtkinter as ctk
 
-from supa_tables import getTrees
+from logic.supa_tables import getTrees
 import ui.config as uicfg
 from ui.talent_tiles import TalentTile
 
@@ -29,8 +29,8 @@ def populate_tab(self, tab, tree):
     # Place buttons
     for talent in self.data:
         if talent["tree_id"] == tree["id"]:
-            x = talent["x_pos"]
-            y = talent["y_pos"]
+            x_pos = talent["x_pos"]
+            y_pos = talent["y_pos"]
             x_offset = 275
             y_offset = 30
             x_spacing = 200
@@ -38,17 +38,17 @@ def populate_tab(self, tab, tree):
             btn_xp = f"{self.tier_xp_values[x]} XP"
 
             # Exception for the main tree talent (denoted by negative position)
-            if x < 0 and y < 0:
+            if x_pos < 0 and y_pos < 0:
                 btn_xp = ""
                 px, py = uicfg.initial_tile_posx, uicfg.initial_tile_posy
                 btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=(uicfg.btn_width * 1.2), height=(uicfg.btn_height * 2.5), fg_color=uicfg.default_tile_clr)
             # Normal talent tiles
             else:
-                btn_xp = f"{self.tier_xp_values[x]} XP"
-                px, py = x_offset + x * x_spacing, y_offset + y * y_spacing
+                btn_xp = f"{self.tier_xp_values[x_pos]} XP"
+                px, py = x_offset + x_pos * x_spacing, y_offset + y_pos * y_spacing
                 btn = TalentTile(frame.canvas, text=talent["name"], textbox_text=talent["description"], xp_text=btn_xp, width=uicfg.btn_width, height=uicfg.btn_height, fg_color=uicfg.tile_hlight_clr)
             btn.place(x=px, y=py)
-            btn.configure(command=lambda t_id=talent["id"], t_name=tree["name"], column=x, row=y: self.on_talent_click(t_name, t_id, column, row))
+            btn.configure(command=lambda t_id=talent["id"], t_name=tree["name"], x_pos=x_pos, y_pos=y_pos: self.on_talent_click(t_name, t_id, x_pos, y_pos))
             self.talent_buttons[tree["name"]][talent["id"]] = (btn, (px, py))
             key = (tree["name"], talent["id"])
             if key in self.selected_talents:

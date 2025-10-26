@@ -42,7 +42,7 @@ class TalentTile(ctk.CTkFrame):
         super().configure(**kwargs)
 
 
-def on_talent_click(self, tree_name, talent_id, column, row):
+def on_talent_click(self, tree_name, talent_id, pos_x, pos_y):
     if self.edit_connection_mode:
         self.handle_connection_edit(tree_name, talent_id)
     elif self.edit_position_mode:
@@ -52,10 +52,10 @@ def on_talent_click(self, tree_name, talent_id, column, row):
     # Normal tile select
     else:
         # Exception for initial tree talent (negative position)
-        if column < 0:
+        if pos_x < 0:
             btn_xp = 0
         else:
-            btn_xp = self.tier_xp_values[column]
+            btn_xp = self.tier_xp_values[pos_x]
         btn, _ = self.talent_buttons[tree_name][talent_id]
         key = (tree_name, talent_id)
         
