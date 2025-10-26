@@ -1,0 +1,43 @@
+{
+    "trees": [
+        {
+            "name": "Skullduggery",
+            "talents": [
+                {
+                    "id": "s0",
+                    "name": "THE LIGHTER YOU ARE",
+                    "description": "When you spend Skullduggery to move, you may stand up from prone or disengage for free.",
+                    "position": [
+                        0,
+                        0
+                    ],
+                    "connections": [
+                        "s5"
+                    ]
+                },
+                {
+                    "id": "s1",
+                    "name": "CHEAT FATE",
+                    "description": "1/Session\nIgnore an Omen you've flipped or a Joker flipped targeting you. Use the next card instead.\n-or-\nDiscard Skullduggery to treat the Omen as if it were a Joker or vise versa. ",
+                    "position": [
+                        0,
+                        1
+                    ],
+                    "connections": [
+                        "s6"
+                    ]
+                },
+                {
+                    "id": "s2",
+                    "name": "OPPORTUNIST",
+                    "description": "You can use any skill card to make opportunity attacks.",
+                    "position": [
+                        0,
+                        2
+                    ],
+                    "connections": []
+                }
+            ]
+        }
+    ]
+}
