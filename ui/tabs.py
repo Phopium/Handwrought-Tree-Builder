@@ -4,8 +4,7 @@ from logic.supa_tables import getTrees
 import ui.config as uicfg
 from ui.talent_tiles import TalentTile
 
-def build_tabs(self):
-    trees = getTrees()
+def build_tabs(self, trees):
     for tree in (trees):
         tab = self.tabs.add(tree["name"])
         print(f"Building tab: {tree["name"]}")
@@ -35,7 +34,7 @@ def populate_tab(self, tab, tree):
             y_offset = 30
             x_spacing = 200
             y_spacing =  170
-            btn_xp = f"{self.tier_xp_values[x]} XP"
+            btn_xp = f"{self.tier_xp_values[x_pos]} XP"
 
             # Exception for the main tree talent (denoted by negative position)
             if x_pos < 0 and y_pos < 0:
@@ -58,11 +57,12 @@ def populate_tab(self, tab, tree):
     self.draw_connections(tree, frame.canvas)
 
 # Clear the tab, then repopulate it with updated buttons (unused)
-def reset_tab(self):
+def reset_tab(self, update_detect):
     this_tab_name = self.tabs.get()
     this_tab = self.tabs.tab(this_tab_name)
     child_frame = this_tab.winfo_children()[0] # Assumes frame is the first child
     child_frame.destroy()
     
-    tree_data = self.data["trees"][this_tab.tree_index]
+    tree_data = next((tree for tree in self.trees if tree["name"] == this_tab_name), None)
+
     self.populate_tab(this_tab, tree_data)

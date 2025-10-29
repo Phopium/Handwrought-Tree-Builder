@@ -48,6 +48,8 @@ class TalentTreeApp(ctk.CTk):
         self.tree_xp_cost = 8
         self.xp_spent = 0
         self.xp_total = int(uicfg.starting_xp)
+        self.trees = supa.getTrees()
+        self.timestamp = supa.get_timestamp()
 
         #== UI Elements ==
         self.grid_rowconfigure(1, weight=1)
@@ -95,7 +97,7 @@ class TalentTreeApp(ctk.CTk):
         self.tabs.pack(fill="both", expand=True)
         self.tab_frames = {}
 
-        self.build_tabs()
+        self.build_tabs(self.trees)
 
     # Attach external methods to class
     build_tabs = build_tabs
@@ -152,7 +154,6 @@ class TalentTreeApp(ctk.CTk):
     def clr_buffers(self):
         self.pos_edit_buffer = None
         self.connection_edit_buffer = None
-
 
 
 if __name__ == "__main__":

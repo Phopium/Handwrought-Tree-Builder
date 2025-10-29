@@ -1,4 +1,5 @@
 import ui.config as uicfg
+#import logic.supa_tables as supa
 
 def get_line_offsets(x_pos, initial_x, btn_width, btn_height):
     """Helper function to calculate offsets based on x-position."""
@@ -37,11 +38,14 @@ def modify_connection(self, tree_name, from_id, to_id):
         from_talent["connections"].append(to_id)
 
 def modify_position(self, tree_name, from_id, to_id):
-    tree = next(t for t in self.data["trees"] if t["name"] == tree_name)
-    from_talent = next(t for t in tree["talents"] if t["id"] == from_id)
-    to_talent = next(t for t in tree["talents"] if t["id"] == to_id)
+    #tree = next(t for t in self.data["trees"] if t["name"] == tree_name)
+    from_talent = next(t for t in self.data if t["id"] == from_id)
+    to_talent = next(t for t in self.data if t["id"] == to_id)
 
-    # copy and swap the position values
-    from_pos = list(from_talent["position"])
-    to_pos = list(to_talent["position"])
-    from_talent["position"], to_talent["position"] = to_pos, from_pos
+    # Copy the position values
+    from_x_pos, from_y_pos = from_talent["x_pos"], from_talent["y_pos"]
+    to_x_pos, to_y_pos = to_talent["x_pos"], to_talent["y_pos"]
+
+    # Swap position values
+    from_talent["x_pos"], to_talent["x_pos"] = to_x_pos, from_x_pos
+    from_talent["y_pos"], to_talent["y_pos"] = to_y_pos, from_y_pos

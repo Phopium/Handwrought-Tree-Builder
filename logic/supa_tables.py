@@ -36,4 +36,28 @@ def getTrees():
     )
     return response.data
 
+def update_timestamp():
+    updated_timestamp = (
+        supabase.table("time_modified")
+        .update({"update_target": "1"})
+        .eq("table_name", "talents")
+        .execute()
+    )
+    new_timestamp = get_timestamp()
+    return new_timestamp
+
+def get_timestamp():
+    response = (
+        supabase.table("time_modified")
+        .select("table_name, updated_at")
+        .eq("table_name", "talents")
+        .execute()
+    )
+    data = response.data[0]
+    timestamp = data["updated_at"]
+    return timestamp
+
+
+
+
 sign_in()

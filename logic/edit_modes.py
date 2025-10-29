@@ -1,4 +1,5 @@
 import customtkinter as ctk
+import logic.supa_tables as supa
 
 import ui.config as uicfg
 
@@ -41,9 +42,15 @@ def handle_pos_edit(self, tree_name, talent_id):
         self.pos_edit_buffer = talent_id
         btn.configure(fg_color="yellow")
     else:
+        new_timestamp = supa.get_timestamp
+        if new_timestamp == self.timestamp:
+            update_detect = False
+        else:
+            update_detect = True
         from_id = self.pos_edit_buffer
         to_id = talent_id
         self.modify_position(tree_name, from_id, to_id)
+        self.timestamp = supa.update_timestamp()
         self.pos_edit_buffer = None
 
         # Reset all button colors
@@ -54,7 +61,7 @@ def handle_pos_edit(self, tree_name, talent_id):
             else:
                 b.configure(fg_color=uicfg.default_tile_clr)
         
-        self.reset_tab()    
+        self.reset_tab(update_detect)    
 
 def open_text_editor(self, tree_name, talent_id):
     # get talent data
