@@ -65,5 +65,13 @@ def update_database(table, id, column, value):
         .execute()
     )
 
+def atomic_pos_swap(from_talent_id, to_talent_id):
+    response = supabase.rpc(
+        'swap_talent_pos_ids', {
+            'id1': from_talent_id,
+            'id2': to_talent_id
+        }
+    ).execute()
+
 
 sign_in()

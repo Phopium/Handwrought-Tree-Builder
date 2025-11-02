@@ -49,7 +49,9 @@ def handle_pos_edit(self, tree_name, talent_id):
             update_detected = False
             from_id = self.pos_edit_buffer
             to_id = talent_id
-            self.modify_position(from_id, to_id)
+            print(f"Swapping IDs: {from_id} and {to_id}")
+            supa.atomic_pos_swap(from_talent_id=from_id, to_talent_id=to_id)
+            supa.update_db_timestamp
         else:
             update_detected = True
             messagebox.showerror("Warning", f"Another concurrent user has updated the database. Refreshing...")
@@ -64,6 +66,7 @@ def handle_pos_edit(self, tree_name, talent_id):
             else:
                 b.configure(fg_color=uicfg.default_tile_clr)
         
+        self.data = supa.loadData()
         self.reset_tab(update_detected)
         self.timestamp = supa.get_timestamp()
 

@@ -40,11 +40,3 @@ def modify_connection(self, tree_name, from_id, to_id):
         to_talent_pos["connections"].remove(from_id)
     else:
         from_talent_pos["connections"].append(to_id)
-
-def modify_position(self, from_id, to_id):
-    from_talent = next(t for t in self.data if t["id"] == from_id)
-    to_talent = next(t for t in self.data if t["id"] == to_id)
-
-    supa.update_database(table="talents", id=from_talent["id"], column="pos_id", value=to_talent["pos_id"])
-    supa.update_database(table="talents", id=to_talent["id"], column="pos_id", value=from_talent["pos_id"])
-    supa.update_db_timestamp()

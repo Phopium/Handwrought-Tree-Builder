@@ -7,7 +7,7 @@ import tkinter as tk
 import ui.config as uicfg
 from ui.tabs import build_tabs, populate_tab, reset_tab
 from ui.talent_tiles import TalentTile, on_talent_click
-from logic.edit_helpers import draw_connections, modify_connection, modify_position
+from logic.edit_helpers import draw_connections, modify_connection
 from logic.edit_modes import handle_connection_edit, handle_pos_edit, open_text_editor
 from logic.info_functions import set_xp_total, load_character, save_character
 import logic.supa_tables as supa
@@ -111,7 +111,6 @@ class TalentTreeApp(ctk.CTk):
     # edit_helpers
     draw_connections = draw_connections
     modify_connection = modify_connection
-    modify_position = modify_position
 
     # edit_modes
     handle_connection_edit = handle_connection_edit
