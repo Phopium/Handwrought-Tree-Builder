@@ -37,10 +37,10 @@ def draw_connections(self, tree, canvas):
 def modify_connection(self, tree_name, from_id, to_id):
     from_talent = next(t for t in self.data if t["id"] == from_id)
     from_talent_pos_table = from_talent["talent_positions"]
-    from_talent_pos = [from_talent["x_pos"], from_talent["x_pos"]]
+    from_talent_pos = [from_talent_pos_table["x_pos"], from_talent_pos_table["y_pos"]]
     to_talent = next(t for t in self.data if t["id"] == to_id)
     to_talent_pos_table = to_talent["talent_positions"]
-    to_talent_pos = [to_talent["x_pos"], to_talent["x_pos"]]
+    to_talent_pos = [to_talent_pos_table["x_pos"], to_talent_pos_table["y_pos"]]
 
     if to_talent_pos in from_talent_pos_table["connections"]:
         from_talent_pos_table["connections"].remove(to_talent_pos)
@@ -54,5 +54,9 @@ def modify_connection(self, tree_name, from_id, to_id):
         from_talent_pos_table["connections"].append(to_talent_pos)
         id = from_talent["pos_id"]
         value = from_talent_pos_table["connections"]
-        
+        print(from_talent["name"])
+        print(from_talent_pos)
+        print(to_talent["name"])
+        print(to_talent_pos)
+
     supa.update_database(table="talent_positions", id=id, column="connections", value=value)

@@ -16,6 +16,7 @@ def handle_connection_edit(self, tree_name, talent_id):
             to_id = talent_id
             self.modify_connection(tree_name, from_id, to_id)
             self.timestamp = supa.get_timestamp()
+            self.data = supa.loadData()
 
             # Get tab info
             this_tab_name = self.tabs.get()
@@ -28,9 +29,10 @@ def handle_connection_edit(self, tree_name, talent_id):
                 canvas.delete(line)
             canvas.lines.clear()
 
-            tree_data = self.data["trees"][this_tab.tree_index]
+            tree_data = next(tree for tree in self.trees if tree["name"] == this_tab_name)
             self.draw_connections(tree_data, canvas)
         else:
+            self.data = supa.loadData()
             self.reset_tab(update_detected)
             self.timestamp = db_timestamp
 
