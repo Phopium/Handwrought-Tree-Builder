@@ -10,9 +10,30 @@ def handle_connection_edit(self, tree_name, talent_id):
         self.connection_edit_buffer = talent_id
         btn.configure(fg_color="yellow")
     else:
-        from_id = self.connection_edit_buffer
-        to_id = talent_id
-        self.modify_connection(tree_name, from_id, to_id)
+        update_detected, db_timestamp = supa.check_if_updated(self.timestamp)
+        if update_detected == False:
+            from_id = self.connection_edit_buffer
+            to_id = talent_id
+            self.modify_connection(tree_name, from_id, to_id)
+            self.timestamp = supa.get_timestamp()
+
+            # Get tab info
+            this_tab_name = self.tabs.get()
+            this_tab = self.tabs.tab(this_tab_name)
+            frame = self.tab_frames[tree_name]
+            canvas = frame.canvas
+
+            # Clear lines then draw new ones
+            for line in canvas.lines:
+                canvas.delete(line)
+            canvas.lines.clear()
+
+            tree_data = self.data["trees"][this_tab.tree_index]
+            self.draw_connections(tree_data, canvas)
+        else:
+            self.reset_tab(update_detected)
+            self.timestamp = db_timestamp
+
         self.connection_edit_buffer = None
 
         # Reset all button colors
@@ -22,20 +43,6 @@ def handle_connection_edit(self, tree_name, talent_id):
                 b.configure(fg_color=uicfg.tile_hlight_clr)
             else:
                 b.configure(fg_color=uicfg.default_tile_clr)
-        
-        # Get tab info
-        this_tab_name = self.tabs.get()
-        this_tab = self.tabs.tab(this_tab_name)
-        frame = self.tab_frames[tree_name]
-        canvas = frame.canvas
-        
-        # Clear lines then draw new ones
-        for line in canvas.lines:
-            canvas.delete(line)
-        canvas.lines.clear()
-        
-        tree_data = self.data["trees"][this_tab.tree_index]
-        self.draw_connections(tree_data, canvas)
 
 def handle_pos_edit(self, tree_name, talent_id):
     btn, _ = self.talent_buttons[tree_name][talent_id]
@@ -44,17 +51,14 @@ def handle_pos_edit(self, tree_name, talent_id):
         btn.configure(fg_color="yellow")
     else:
         # Check if another concurrent user updated the database since last check.
-        new_timestamp = supa.get_timestamp()
-        if new_timestamp == self.timestamp:
-            update_detected = False
+        update_detected, db_timestamp = supa.check_if_updated(self.timestamp)
+        if update_detected == False:
             from_id = self.pos_edit_buffer
             to_id = talent_id
-            print(f"Swapping IDs: {from_id} and {to_id}")
             supa.atomic_pos_swap(from_talent_id=from_id, to_talent_id=to_id)
-            supa.update_db_timestamp
+            self.timestamp = supa.get_timestamp()
         else:
-            update_detected = True
-            messagebox.showerror("Warning", f"Another concurrent user has updated the database. Refreshing...")
+            self.timestamp = db_timestamp
 
         self.pos_edit_buffer = None
 
@@ -68,7 +72,6 @@ def handle_pos_edit(self, tree_name, talent_id):
         
         self.data = supa.loadData()
         self.reset_tab(update_detected)
-        self.timestamp = supa.get_timestamp()
 
 def open_text_editor(self, tree_name, talent_id):
     # get talent data

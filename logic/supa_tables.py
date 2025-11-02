@@ -1,4 +1,5 @@
 from supabase import create_client, Client
+from tkinter import messagebox
 
 url: str = "https://nmnyrrbwjbblwkjlylqc.supabase.co"
 key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tbnlycmJ3amJibHdramx5bHFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAyOTIzMTcsImV4cCI6MjA3NTg2ODMxN30.D9KAYBZJ1FqRmhGPsglxXXKNXiVAvZzJz0ggwCDfA18"
@@ -64,6 +65,7 @@ def update_database(table, id, column, value):
         .eq("id", id)
         .execute()
     )
+    update_db_timestamp()
 
 def atomic_pos_swap(from_talent_id, to_talent_id):
     response = supabase.rpc(
@@ -72,6 +74,15 @@ def atomic_pos_swap(from_talent_id, to_talent_id):
             'id2': to_talent_id
         }
     ).execute()
+    update_db_timestamp()
+
+def check_if_updated(local_timestamp):
+    db_timestamp = get_timestamp()
+    if db_timestamp == local_timestamp:
+        return False, db_timestamp
+    else:
+        messagebox.showerror("Warning", f"Another concurrent user has updated the database. Refreshing...")
+        return True, db_timestamp
 
 
 sign_in()

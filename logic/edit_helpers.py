@@ -20,7 +20,13 @@ def draw_connections(self, tree, canvas):
             start_x, start_y = self.talent_buttons[tree["name"]][talent["id"]][1]
             talent_pos = talent["talent_positions"]
             for conn_id in talent_pos["connections"]:
-                end_x, end_y = conn_id
+                end_x_pos, end_y_pos = conn_id
+                x_offset = 275
+                y_offset = 30
+                x_spacing = 200
+                y_spacing =  170
+
+                end_x, end_y = x_offset + end_x_pos * x_spacing, y_offset + end_y_pos * y_spacing
                 s_offset_x, s_offset_y = get_line_offsets(start_x, uicfg.initial_tile_posx, uicfg.btn_width, uicfg.btn_height)
                 e_offset_x, e_offset_y = get_line_offsets(end_x, uicfg.initial_tile_posx, uicfg.btn_width, uicfg.btn_height)
                 
@@ -30,13 +36,23 @@ def draw_connections(self, tree, canvas):
 
 def modify_connection(self, tree_name, from_id, to_id):
     from_talent = next(t for t in self.data if t["id"] == from_id)
-    from_talent_pos = from_talent["talent_positions"]
+    from_talent_pos_table = from_talent["talent_positions"]
+    from_talent_pos = [from_talent["x_pos"], from_talent["x_pos"]]
     to_talent = next(t for t in self.data if t["id"] == to_id)
-    to_talent_pos = to_talent["talent_positions"]
+    to_talent_pos_table = to_talent["talent_positions"]
+    to_talent_pos = [to_talent["x_pos"], to_talent["x_pos"]]
 
-    if to_id in from_talent_pos["connections"]:
-        from_talent_pos["connections"].remove(to_id)
-    elif from_id in to_talent_pos["connections"]:
-        to_talent_pos["connections"].remove(from_id)
+    if to_talent_pos in from_talent_pos_table["connections"]:
+        from_talent_pos_table["connections"].remove(to_talent_pos)
+        id = from_talent["pos_id"]
+        value = from_talent_pos_table["connections"]
+    elif from_talent_pos in to_talent_pos_table["connections"]:
+        to_talent_pos_table["connections"].remove(from_talent_pos)
+        id = to_talent["pos_id"]
+        value = to_talent_pos_table["connections"]
     else:
-        from_talent_pos["connections"].append(to_id)
+        from_talent_pos_table["connections"].append(to_talent_pos)
+        id = from_talent["pos_id"]
+        value = from_talent_pos_table["connections"]
+        
+    supa.update_database(table="talent_positions", id=id, column="connections", value=value)
