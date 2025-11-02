@@ -8,7 +8,7 @@ def build_tabs(self, trees):
     for tree in (trees):
         tab = self.tabs.add(tree["name"])
         print(f"Building tab: {tree["name"]}")
-        tab.tree_index = tree["id"] # For getting the tree data later
+        tab.tree_name = tree["name"] # For getting the tree data later
         tab.canvas_lines = []
         self.populate_tab(tab, tree)
 
@@ -28,8 +28,9 @@ def populate_tab(self, tab, tree):
     # Place buttons
     for talent in self.data:
         if talent["tree_id"] == tree["id"]:
-            x_pos = talent["x_pos"]
-            y_pos = talent["y_pos"]
+            talent_pos = talent["talent_positions"]
+            x_pos = talent_pos["x_pos"]
+            y_pos = talent_pos["y_pos"]
             x_offset = 275
             y_offset = 30
             x_spacing = 200
@@ -57,12 +58,19 @@ def populate_tab(self, tab, tree):
     self.draw_connections(tree, frame.canvas)
 
 # Clear the tab, then repopulate it with updated buttons (unused)
-def reset_tab(self, update_detect):
-    this_tab_name = self.tabs.get()
-    this_tab = self.tabs.tab(this_tab_name)
-    child_frame = this_tab.winfo_children()[0] # Assumes frame is the first child
-    child_frame.destroy()
-    
-    tree_data = next((tree for tree in self.trees if tree["name"] == this_tab_name), None)
+def reset_tab(self, update_detected):
+    def reset_single(tab):
+        child_frame = tab.winfo_children()[0] # Assumes frame is the first child
+        child_frame.destroy()
+        
+        tree_data = next(tree for tree in self.trees if tree["name"] == tab.tree_name)
 
-    self.populate_tab(this_tab, tree_data)
+        self.populate_tab(tab, tree_data)
+    
+    if update_detected:
+        for tab in self.tabs.winfo_children():
+            reset_single(tab)
+    else:
+        current_tab_name = self.tabs.get()
+        this_tab = self.tabs.tab(current_tab_name)
+        reset_single(this_tab)

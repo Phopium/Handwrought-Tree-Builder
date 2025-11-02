@@ -23,8 +23,9 @@ def sign_in():
     return None
 
 def loadData():
-    response = (supabase.table("talents")
-        .select("*")
+    response = (
+        supabase.table("talents")
+        .select("*, talent_positions!inner(*)")
         .execute()
     )
     return response.data
@@ -36,15 +37,13 @@ def getTrees():
     )
     return response.data
 
-def update_timestamp():
+def update_db_timestamp():
     updated_timestamp = (
         supabase.table("time_modified")
         .update({"update_target": "1"})
         .eq("table_name", "talents")
         .execute()
     )
-    new_timestamp = get_timestamp()
-    return new_timestamp
 
 def get_timestamp():
     response = (
@@ -58,6 +57,13 @@ def get_timestamp():
     return timestamp
 
 
+def update_database(table, id, column, value):
+    response = (
+        supabase.table(table)
+        .update({column: value})
+        .eq("id", id)
+        .execute()
+    )
 
 
 sign_in()
