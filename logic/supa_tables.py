@@ -81,7 +81,7 @@ def check_if_updated(local_timestamp):
     if db_timestamp == local_timestamp:
         return False, db_timestamp
     else:
-        messagebox.showerror("Warning", f"Another concurrent user has updated the database. Refreshing...")
+        messagebox.showerror("Warning", "Another concurrent user has updated the database. No changes were made.")
         return True, db_timestamp
 
 

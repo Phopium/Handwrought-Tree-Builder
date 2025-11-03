@@ -25,8 +25,13 @@ def draw_connections(self, tree, canvas):
                 y_offset = 30
                 x_spacing = 200
                 y_spacing =  170
-
-                end_x, end_y = x_offset + end_x_pos * x_spacing, y_offset + end_y_pos * y_spacing
+                
+                # Exception for initial tile
+                if end_x_pos < 0 and end_x_pos < 0:
+                    end_x, end_y = uicfg.initial_tile_posx, uicfg.initial_tile_posy
+                else:
+                    end_x, end_y = x_offset + end_x_pos * x_spacing, y_offset + end_y_pos * y_spacing
+                
                 s_offset_x, s_offset_y = get_line_offsets(start_x, uicfg.initial_tile_posx, uicfg.btn_width, uicfg.btn_height)
                 e_offset_x, e_offset_y = get_line_offsets(end_x, uicfg.initial_tile_posx, uicfg.btn_width, uicfg.btn_height)
                 
@@ -54,9 +59,5 @@ def modify_connection(self, tree_name, from_id, to_id):
         from_talent_pos_table["connections"].append(to_talent_pos)
         id = from_talent["pos_id"]
         value = from_talent_pos_table["connections"]
-        print(from_talent["name"])
-        print(from_talent_pos)
-        print(to_talent["name"])
-        print(to_talent_pos)
 
     supa.update_database(table="talent_positions", id=id, column="connections", value=value)

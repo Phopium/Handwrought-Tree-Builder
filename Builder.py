@@ -9,7 +9,7 @@ from ui.tabs import build_tabs, populate_tab, reset_tab
 from ui.talent_tiles import TalentTile, on_talent_click
 from logic.edit_helpers import draw_connections, modify_connection
 from logic.edit_modes import handle_connection_edit, handle_pos_edit, open_text_editor
-from logic.info_functions import set_xp_total, load_character, save_character
+from logic.info_functions import set_xp_total, load_character, save_character, reset_character
 import logic.supa_tables as supa
 
 
@@ -81,6 +81,8 @@ class TalentTreeApp(ctk.CTk):
         self.load_char_btn.grid(row=0, column=2, padx=5, pady=5)
         self.save_char_btn = ctk.CTkButton(self.info_btn_frame, text="Save Character", command=self.save_character)
         self.save_char_btn.grid(row=0, column=1, padx=5, pady=5)
+        self.reset_char_btn = ctk.CTkButton(self.info_btn_frame, text="Reset Character", command=self.reset_character)
+        self.reset_char_btn.grid(row=0, column=3, padx=5, pady=5)
 
         self.edit_text_btn = ctk.CTkButton(self.info_btn_frame, text="Edit: Text", command=self.toggle_edit_text_mode)
         self.edit_text_btn.grid(row=1, column=0, padx=5, pady=5)
@@ -88,6 +90,8 @@ class TalentTreeApp(ctk.CTk):
         self.edit_pos_btn.grid(row=1, column=1, padx=5, pady=5)
         self.edit_conn_btn = ctk.CTkButton(self.info_btn_frame, text="Edit: Connections", command=self.toggle_edit_connection_mode)
         self.edit_conn_btn.grid(row=1, column=2, padx=5, pady=5)
+        self.refresh_btn = ctk.CTkButton(self.info_btn_frame, text="Refresh Trees", command=self.refresh_tabs)
+        self.refresh_btn.grid(row=1, column=3, padx=5, pady=5)
 
         #= Tree frame =
         self.tree_frame = ctk.CTkFrame(self)
@@ -121,6 +125,7 @@ class TalentTreeApp(ctk.CTk):
     set_xp_total = set_xp_total
     load_character = load_character
     save_character = save_character
+    reset_character = reset_character
 
     #= Toggle button modes =
     def toggle_edit_connection_mode(self):
@@ -149,6 +154,10 @@ class TalentTreeApp(ctk.CTk):
         else:
             self.edit_text_btn.configure(fg_color=uicfg.default_btn_clr)
             self.text_edit_buffer = None
+
+    def refresh_tabs(self):
+        self.data = supa.loadData()
+        self.reset_tab(True)
 
     def clr_buffers(self):
         self.pos_edit_buffer = None

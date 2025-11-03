@@ -77,8 +77,7 @@ def handle_pos_edit(self, tree_name, talent_id):
 
 def open_text_editor(self, tree_name, talent_id):
     # get talent data
-    tree = next(t for t in self.data["trees"] if t["name"] == tree_name)
-    talent = next(t for t in tree["talents"] if t["id"] == talent_id)
+    talent = next(t for t in self.data if t["id"] == talent_id)
 
     # create modal window
     top = ctk.CTkToplevel(self)
@@ -104,19 +103,24 @@ def open_text_editor(self, tree_name, talent_id):
     btn_frame = ctk.CTkFrame(top)
     btn_frame.grid(row=4, column=0, padx=8, pady=8, sticky="e")
     def on_save():
-        new_title = title_entry.get().strip()
-        new_body = body_tb.get("1.0", "end").rstrip("\n")
-        # persist to data
-        talent["name"] = new_title
-        # store under "description"
-        talent["description"] = new_body
+        update_detected, db_timestamp = supa.check_if_updated(self.timestamp)
+        if update_detected == False:
+            new_title = title_entry.get().strip()
+            new_body = body_tb.get("1.0", "end").rstrip("\n")
+            # persist to data
+            supa.update_database(table="talents", id=talent_id, column="name", value=new_title)
+            talent["name"] = new_title
+            # store under "description"
+            supa.update_database(table="talents", id=talent_id, column="description", value=new_body)
+            self.timestamp = db_timestamp
+            talent["description"] = new_body
 
-        # update UI button/label
-        btn, _ = self.talent_buttons[tree_name][talent_id]
-        btn.configure(text=new_title, textbox_text=new_body)
+            # update UI button/label
+            btn, _ = self.talent_buttons[tree_name][talent_id]
+            btn.configure(text=new_title, textbox_text=new_body)
 
-        top.grab_release()
-        top.destroy()
+            top.grab_release()
+            top.destroy()
 
     def on_cancel():
         top.grab_release()

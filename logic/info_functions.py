@@ -11,6 +11,23 @@ def set_xp_total(self):
     self.xp_total = int(self.xp_entry.get())
     self.xp_remaining_val.configure(text=(self.xp_total - self.xp_spent))
 
+def reset_character(self):
+    self.selected_talents = set()
+    self.xp_entry.delete(0, "end")
+    self.xp_total = 10
+    self.xp_spent = 0
+    self.xp_remaining_val.configure(text=(self.xp_total - self.xp_spent))
+
+    # update tile colors to reflect selection
+    for tree_name, talents in self.talent_buttons.items():
+        for tid, (btn, _) in talents.items():
+            key = (tree_name, tid)
+            if key in self.selected_talents:
+                btn.configure(fg_color=uicfg.tile_hlight_clr)
+            else:
+                btn.configure(fg_color=uicfg.default_tile_clr)
+
+
 def load_character(self):
     path = tk.filedialog.askopenfilename(title="Open character JSON", filetypes=[("JSON Files","*.json"),("All files","*.*")])
     if not path:
