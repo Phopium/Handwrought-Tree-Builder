@@ -1,4 +1,5 @@
 Old/
 venv/
 Characters/
-test.py
+Test/
+logic/login_config.ini

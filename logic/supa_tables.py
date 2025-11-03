@@ -1,27 +1,65 @@
 from supabase import create_client, Client
 from tkinter import messagebox
+import configparser
+import os
+import getpass
 
 url: str = "https://nmnyrrbwjbblwkjlylqc.supabase.co"
 key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tbnlycmJ3amJibHdramx5bHFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAyOTIzMTcsImV4cCI6MjA3NTg2ODMxN30.D9KAYBZJ1FqRmhGPsglxXXKNXiVAvZzJz0ggwCDfA18"
 supabase: Client = create_client(url, key)
 
 def sign_in():
-    email = "wilsonpkyle@gmail.com"
-    password = "nq741963"
-    if not email:
-        email = input("Email:")
-        password = input("Password:")
+    user_email, password = check_credentials()
     try:
-        response = supabase.auth.sign_in_with_password({"email": email, "password": password})
+        response = supabase.auth.sign_in_with_password({"email": user_email, "password": password})
         if response.user and response.session:
             print("User logged in successfully:", response.user.email)
-            print("Session created:")
+            print("Supabase session created")
             return response.session
         else:
             print("Login failed. Check your email and password.")
     except Exception as e:
         print(f"Error during sign in: {e}")
     return None
+
+# Supabase credentials
+def check_credentials():
+    config = configparser.ConfigParser()
+    dir_path = os.path.dirname(os.path.abspath(__file__))
+    config_file_path = os.path.join(dir_path, "login_config.ini")
+    
+    # --- Check if config file exists ---
+    if os.path.exists(config_file_path):
+        config.read(config_file_path)
+        try:
+            db_user = config['credentials']['username']
+            db_pass = config['credentials']['password']
+            print("Credentials loaded from config file.")
+        except KeyError:
+            print("Config file found, but 'credentials' section missing or incomplete.")
+            db_user = None
+            db_pass = None
+    else:
+        # --- Prompt user if file doesn't exist ---
+        print("Config file not found. Prompting for credentials...")
+        db_user = input("Enter username: ")
+        db_pass = getpass.getpass("Enter password: ")
+        
+        save = input("Save credentials? (y/n): ")
+        if save.lower() == "y":
+            config["credentials"] = {
+                'username': db_user,
+                'password': db_pass
+            }
+            try:
+                with open(config_file_path, 'w') as configfile:
+                    config.write(configfile)
+                print(f"Credentials saved to {config_file_path}")
+            except IOError as e:
+                print(f"Error creating file: {e}")
+                
+    return db_user, db_pass
+
 
 def loadData():
     response = (
