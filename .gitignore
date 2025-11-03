@@ -3,3 +3,6 @@ venv/
 Characters/
 Test/
 logic/login_config.ini
+logic/_pycache_/
+ui/_pycache_/
+_pycache_/
